@@ -74,7 +74,7 @@ export default function App() {
               onClick={() => handleScrollToSection("strategy")} 
               className="hover:text-cyan-400 transition cursor-pointer"
             >
-              System Auditor
+              Instant Campaigns
             </button>
             <button 
               onClick={() => handleScrollToSection("testimonials")} 

@@ -112,7 +112,7 @@ export default function InteractiveAuditer() {
             <span>Telemetry Module [V2.55]</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-none">
-            INSTANT LOCAL <span className="text-cyan-400">CAMPAIGN AUDITOR.</span>
+            INSTANT LOCAL <span className="text-cyan-400">CAMPAIGNS.</span>
           </h2>
           <p className="text-sm font-sans text-neutral-450 max-w-2xl mx-auto font-light">
             Input your parameters below. My custom-engineered machine proxy generates a targeted 3-stage local acquisition plan customized specifically to dominate your nearest sub-region.

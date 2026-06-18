@@ -41,7 +41,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
             onClick={() => onScrollToSection("strategy")} 
             className="hover:text-cyan-400 transition-colors duration-200 cursor-pointer"
           >
-            02// INSTANT AUDIT
+            02// INSTANT CAMPAIGN
           </button>
           <button 
             onClick={() => onScrollToSection("testimonials")} 
@@ -68,7 +68,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
             onClick={() => onScrollToSection("strategy")}
             className="font-mono text-xs font-bold border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300 px-4 py-2 rounded-none tracking-widest cursor-pointer shadow-[0_0_15px_rgba(111,255,233,0.1)] hover:shadow-[0_0_25px_rgba(111,255,233,0.3)]"
           >
-            LOCAL SYSTEM AUDIT &rarr;
+            INSTANT CAMPAIGN &rarr;
           </button>
         </div>
       </nav>
@@ -181,7 +181,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               onClick={() => onScrollToSection("strategy")}
               className="px-8 py-4 bg-cyan-400 text-black font-mono text-xs font-black tracking-widest hover:bg-white hover:text-black hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(111,255,233,0.25)] hover:shadow-[0_8px_30px_rgba(255,255,255,0.3)] duration-200 cursor-pointer text-center"
             >
-              RUN FREE AI LOCAL AUDIT
+              RUN FREE INSTANT CAMPAIGNS
             </button>
             <button
               onClick={() => onScrollToSection("contact")}

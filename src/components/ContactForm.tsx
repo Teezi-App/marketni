@@ -150,7 +150,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <span className="block text-[9px] text-neutral-500 uppercase tracking-widest">Consulting Hotline</span>
-                  <span className="text-neutral-200 font-bold">+44 (0) 7895 242 121</span>
+                  <span className="text-neutral-200 font-bold">+44 (0) 7985 182 951</span>
                 </div>
               </div>
 
@@ -159,8 +159,8 @@ export default function ContactForm() {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="block text-[9px] text-neutral-500 uppercase tracking-widest">Primary postcodes served</span>
-                  <span className="text-neutral-200 font-bold">Harrogate, St Albans, West London, Home Counties</span>
+                  <span className="block text-[9px] text-neutral-500 uppercase tracking-widest">Primary Office Address</span>
+                  <span className="text-neutral-200 font-bold">Ashley House, Epsom, KT18 5AB</span>
                 </div>
               </div>
             </div>

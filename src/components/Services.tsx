@@ -225,7 +225,7 @@ export default function Services() {
               Unsure which trigger point to activate first?
             </h4>
             <p className="text-sm text-neutral-450 font-sans font-light">
-              Enter details below in the **Instant Strategy Auditor** module. Let my custom campaign engine generate a localized step-by-step game plan tailored to your town immediately.
+              Enter details below in the **Instant Campaigns** module. Let my custom campaign engine generate a localized step-by-step game plan tailored to your town immediately.
             </p>
           </div>
           <div className="lg:col-span-4 flex justify-start lg:justify-end">
