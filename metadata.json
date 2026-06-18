@@ -1,0 +1,6 @@
+{
+  "name": "Marketni Marketing Consultancy",
+  "description": "Bespoke local marketing consultancy landing page for Martin Walker of Marketni, featuring an interactive local campaign strategist tool backed by Gemini AI, client success stories, and a leads dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
