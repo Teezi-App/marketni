@@ -167,8 +167,8 @@ export default function ContactForm() {
               <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-none">
                 ENGAGE THE <span className="text-cyan-400">PLAYBOOK.</span>
               </h2>
-              <p className="text-sm font-sans text-neutral-450 leading-relaxed font-light font-light">
-                Ready to dominate your postcode sector? Send me a line. No automated sales pitches—I review every local inquiry personally within 24 hours. Let's make your brand the regional default.
+              <p className="text-sm font-sans text-neutral-450 leading-relaxed font-light">
+                Ready to dominate your postcode? Drop me a message. No automated sales pitches.! I review every local inquiry personally within 24 hours. Let's make your brand the regional default.
               </p>
             </div>
 

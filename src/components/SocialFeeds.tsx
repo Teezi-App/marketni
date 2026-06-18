@@ -314,29 +314,44 @@ export default function SocialFeeds() {
 
               <div className="space-y-3 font-mono text-xs">
                 {/* Channel List */}
-                <div className="bg-neutral-950 p-3.5 border border-white/10 flex items-center justify-between">
+                <a
+                  href="https://www.instagram.com/marketni_me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-neutral-950 p-3.5 border border-white/10 hover:border-cyan-400/50 flex items-center justify-between transition-colors duration-200 group block rounded-sm"
+                >
                   <div className="flex items-center space-x-2.5">
-                    <Instagram className="w-4 h-4 text-pink-500" />
-                    <span className="text-neutral-200">@marketni_martin</span>
+                    <Instagram className="w-4 h-4 text-pink-500 group-hover:scale-110 transition-transform" />
+                    <span className="text-neutral-200 group-hover:text-cyan-400 transition-colors">@marketni_me</span>
                   </div>
-                  <span className="text-[9px] text-neutral-500 font-bold tracking-widest uppercase">7.4k fans</span>
-                </div>
+                  <span className="text-[9px] text-neutral-500 group-hover:text-neutral-400 font-bold tracking-widest uppercase">Click to view</span>
+                </a>
 
-                <div className="bg-neutral-950 p-3.5 border border-white/10 flex items-center justify-between">
+                <a
+                  href="https://x.com/marketni_me"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-neutral-950 p-3.5 border border-white/10 hover:border-cyan-400/50 flex items-center justify-between transition-colors duration-200 group block rounded-sm"
+                >
                   <div className="flex items-center space-x-2.5">
-                    <span className="font-sans font-black text-white text-base leading-none">X</span>
-                    <span className="text-neutral-200">@MartinWalkerX</span>
+                    <span className="font-sans font-black text-white text-base leading-none group-hover:text-cyan-400 transition-colors">X</span>
+                    <span className="text-neutral-200 group-hover:text-cyan-400 transition-colors">@marketni_me</span>
                   </div>
-                  <span className="text-[9px] text-neutral-500 font-bold tracking-widest uppercase">12.1k fans</span>
-                </div>
+                  <span className="text-[9px] text-neutral-500 group-hover:text-neutral-400 font-bold tracking-widest uppercase">Click to view</span>
+                </a>
 
-                <div className="bg-neutral-950 p-3.5 border border-white/10 flex items-center justify-between">
+                <a
+                  href="https://wa.me/447985182951"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-neutral-950 p-3.5 border border-white/10 hover:border-cyan-400/50 flex items-center justify-between transition-colors duration-200 group block rounded-sm"
+                >
                   <div className="flex items-center space-x-2.5">
-                    <MessageCircle className="w-4 h-4 text-emerald-400" />
-                    <span className="text-neutral-200">Martin Consultation</span>
+                    <MessageCircle className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
+                    <span className="text-neutral-200 group-hover:text-cyan-400 transition-colors">Whatsapp Martin</span>
                   </div>
-                  <span className="text-[9px] text-neutral-500 font-bold tracking-widest uppercase">On-Site</span>
-                </div>
+                  <span className="text-[9px] text-neutral-500 group-hover:text-emerald-400 font-bold tracking-widest uppercase">On-Site</span>
+                </a>
               </div>
 
               <p className="text-xs font-sans text-neutral-450 leading-relaxed font-light">
