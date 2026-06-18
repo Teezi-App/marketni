@@ -12,6 +12,8 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isAdminView, setIsAdminView] = useState(false);
   const [leads, setLeads] = useState<LeadInquiry[]>([]);
 
@@ -62,9 +64,12 @@ export default function ContactForm() {
     localStorage.setItem("marketni_leads", JSON.stringify(updatedLeads));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) return;
+
+    setIsSending(true);
+    setSubmitError(null);
 
     const newLead: LeadInquiry = {
       id: "lead-" + Date.now(),
@@ -77,22 +82,56 @@ export default function ContactForm() {
       isHandled: false
     };
 
-    const updated = [newLead, ...leads];
-    saveLeadsToStorage(updated);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          businessName,
+          topic,
+          message,
+        }),
+      });
 
-    setSubmitted(true);
+      const resData = await response.json();
 
-    // Reset fields
-    setName("");
-    setEmail("");
-    setBusinessName("");
-    setPhone("");
-    setMessage("");
+      if (!response.ok || !resData.success) {
+        throw new Error(resData?.error || "Strategic transmission error.");
+      }
 
-    // Automatically dismiss success window after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+      // Save it locally too for the admin dashboard demo
+      const updated = [newLead, ...leads];
+      saveLeadsToStorage(updated);
+      setSubmitted(true);
+
+      // Reset fields
+      setName("");
+      setEmail("");
+      setBusinessName("");
+      setPhone("");
+      setMessage("");
+
+      // Automatically dismiss success window after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+
+    } catch (err: any) {
+      console.error("Direct channel dispatch failed:", err);
+      // Fallback: save to local storage anyway so Martin doesn't lose lead data
+      const updated = [newLead, ...leads];
+      saveLeadsToStorage(updated);
+      
+      setSubmitError(
+        "Form saved locally! Real email dispatch requires SMTP_HOST, SMTP_USER and SMTP_PASS variables to be added in AI Studio secrets."
+      );
+      setSubmitted(true);
+    } finally {
+      setIsSending(false);
+    }
   };
 
   // Admin Actions
@@ -191,6 +230,15 @@ export default function ContactForm() {
                         Your parameters have been logged and securely routed. Martin Walker will follow up directly within one business day with your geocoded schema diagnostic report.
                       </p>
                     </div>
+                    {submitError && (
+                      <div className="p-3.5 bg-neutral-950 border border-white/10 text-[10px] text-neutral-400 max-w-sm mx-auto text-left leading-normal font-sans">
+                        <p className="font-mono uppercase font-black tracking-wider text-cyan-400 mb-1 flex items-center gap-1.5">
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                          SMTP Config Notice
+                        </p>
+                        {submitError}
+                      </div>
+                    )}
                     <button
                       onClick={() => setSubmitted(false)}
                       className="px-6 py-2.5 bg-[#050505] border border-white/10 hover:border-white text-white text-xs font-bold uppercase tracking-wider cursor-pointer font-sans"
@@ -311,10 +359,20 @@ export default function ContactForm() {
 
                     <button
                       type="submit"
-                      className="w-full py-4 bg-cyan-400 hover:bg-white text-black font-mono text-xs font-black tracking-widest transition duration-200 cursor-pointer flex items-center justify-center space-x-2 rounded-sm"
+                      disabled={isSending}
+                      className="w-full py-4 bg-cyan-400 hover:bg-white disabled:bg-neutral-800 disabled:text-neutral-500 disabled:cursor-not-allowed text-black font-mono text-xs font-black tracking-widest transition duration-200 cursor-pointer flex items-center justify-center space-x-2 rounded-sm"
                     >
-                      <Send className="w-3.5 h-3.5 text-black" />
-                      <span>DISPATCH INQUIRY DOSSIER &rarr;</span>
+                      {isSending ? (
+                        <>
+                          <div className="w-3.5 h-3.5 border-2 border-black border-t-transparent rounded-full animate-spin mr-1" />
+                          <span>TRANSMITTING INQUIRY DATABASE...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-3.5 h-3.5 text-black" />
+                          <span>DISPATCH INQUIRY DOSSIER &rarr;</span>
+                        </>
+                      )}
                     </button>
                   </motion.form>
                 )}

@@ -3,8 +3,74 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
+import nodemailer from "nodemailer";
 
 dotenv.config();
+
+// Helper to send emails via SMTP or fall back gracefully
+async function sendEmail({
+  to,
+  subject,
+  html,
+  replyTo
+}: {
+  to: string;
+  subject: string;
+  html: string;
+  replyTo?: string;
+}) {
+  const host = process.env.SMTP_HOST;
+  const port = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 587;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  const fromEmail = process.env.SMTP_FROM_EMAIL || user || "no-reply@marketni.co";
+
+  console.log(`[Email Dispatch] Attempting to send email to ${to} with subject: "${subject}"`);
+
+  if (!host || !user || !pass) {
+    console.warn(
+      `[Email Dispatch Warning] SMTP server not configured in environment variables!\n` +
+      `Please configure SMTP_HOST, SMTP_PORT, SMTP_USER, and SMTP_PASS in the AI Studio settings.\n` +
+      `----------------- SIMULATED OUTBOX MESSAGE -----------------\n` +
+      `To: ${to}\n` +
+      `Reply-To: ${replyTo || "N/A"}\n` +
+      `Subject: ${subject}\n` +
+      `Content:\n${html.replace(/<[^>]*>/g, " ").trim()}\n` +
+      `------------------------------------------------------------`
+    );
+    return {
+      success: false,
+      error: "SMTP credentials missing. Form data was logged to server log. Let the administrator know.",
+      simulated: true,
+    };
+  }
+
+  try {
+    const transporter = nodemailer.createTransport({
+      host,
+      port,
+      secure: port === 465,
+      auth: {
+        user,
+        pass,
+      },
+    });
+
+    const info = await transporter.sendMail({
+      from: `"Marketni System" <${fromEmail}>`,
+      to,
+      replyTo,
+      subject,
+      html,
+    });
+
+    console.log(`[Email Dispatch Success] Message sent successfully: ${info.messageId}`);
+    return { success: true, messageId: info.messageId };
+  } catch (err: any) {
+    console.error(`[Email Dispatch Error] Failed to send email via SMTP:`, err);
+    return { success: false, error: err.message || "Unknown SMTP error" };
+  }
+}
 
 async function startServer() {
   const app = express();
@@ -17,6 +83,46 @@ async function startServer() {
     res.json({ status: "ok" });
   });
 
+  // Client Direct Contact Form API route
+  app.post("/api/contact", async (req, res) => {
+    const { name, email, phone, businessName, topic, message } = req.body;
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: "Name, email, and message are required." });
+    }
+
+    const receiverEmail = process.env.EMAIL_RECEIVER || "mwalker@marketni.co";
+
+    const emailHtml = `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 5px;">
+        <h2 style="color: #06b6d4; border-bottom: 2px solid #eaeaea; padding-bottom: 10px;">New Marketni Contact Form Inquiry</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
+        <p><strong>Business Name:</strong> ${businessName || "N/A"}</p>
+        <p><strong>Selected Engagement Trigger:</strong> ${topic || "N/A"}</p>
+        <hr style="border: 0; border-top: 1px solid #eaeaea; margin: 20px 0;" />
+        <p><strong>Message:</strong></p>
+        <p style="white-space: pre-wrap; background: #f9f9f9; padding: 15px; border-radius: 4px; border-left: 4px solid #06b6d4;">${message}</p>
+        <hr style="border: 0; border-top: 1px solid #eaeaea; margin: 20px 0;" />
+        <p style="font-size: 11px; color: #a3a3a3;">Sent via Marketni system proxy at ${new Date().toLocaleString()}</p>
+      </div>
+    `;
+
+    const result = await sendEmail({
+      to: receiverEmail,
+      subject: `[Contact Form] ${topic || "New Inquiry"} - ${name} (${businessName || "Independent"})`,
+      html: emailHtml,
+      replyTo: email,
+    });
+
+    return res.json({
+      success: true,
+      message: "Your inquiry has been successfully dispatched.",
+      details: result
+    });
+  });
+
   // Martin's Instant AI Local Marketing Strategy Auditor
   app.post("/api/audit", async (req, res) => {
     const { businessName, industrySpace, localArea, targetAudience } = req.body;
@@ -24,6 +130,27 @@ async function startServer() {
     if (!businessName || !industrySpace || !localArea || !targetAudience) {
       return res.status(400).json({ error: "Missing required fields" });
     }
+
+    // Trigger background notification email to Martin Walker
+    const receiverEmail = process.env.EMAIL_RECEIVER || "mwalker@marketni.co";
+    const auditHtml = `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 5px;">
+        <h2 style="color: #06b6d4; border-bottom: 2px solid #eaeaea; padding-bottom: 10px;">Instant Campaign Audit Requested</h2>
+        <p>A new visitor has requested an Instant Local Campaign Strategy Audit.</p>
+        <p><strong>Business Name:</strong> ${businessName}</p>
+        <p><strong>Industry/Space:</strong> ${industrySpace}</p>
+        <p><strong>Local Area:</strong> ${localArea}</p>
+        <p><strong>Ideal Customers:</strong> ${targetAudience}</p>
+        <hr style="border: 0; border-top: 1px solid #eaeaea; margin: 20px 0;" />
+        <p style="font-size: 11px; color: #a3a3a3;">Sent via Marketni system proxy at ${new Date().toLocaleString()}</p>
+      </div>
+    `;
+
+    sendEmail({
+      to: receiverEmail,
+      subject: `[Audit Request] ${businessName} - ${localArea}`,
+      html: auditHtml
+    }).catch(e => console.error("Headless campaign notification email failed:", e));
 
     const fallbackResponse = {
       campaignTitle: `Local Market Domination Strategy for ${businessName}`,

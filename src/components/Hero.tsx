@@ -108,7 +108,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
                 </h3>
                 <div className="flex items-center space-x-2 text-xs text-neutral-300">
                   <MapPin className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>Connecting locally &bull; Growing globally</span>
+                  <span>Connecting locally &bull; Growing digitally</span>
                 </div>
               </div>
             </div>
