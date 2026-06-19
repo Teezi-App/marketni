@@ -24,9 +24,6 @@ export default function Hero({ onScrollToSection }: HeroProps) {
           <span className="font-mono text-xl font-black tracking-widest text-white">
             MARKET<span className="text-cyan-400">NI</span>
           </span>
-          <span className="text-xs bg-cyan-950 text-cyan-400 border border-cyan-800 font-mono px-2 py-0.5 rounded-full uppercase tracking-widest font-bold">
-            WALKER
-          </span>
         </div>
 
         {/* Navigation Items */}

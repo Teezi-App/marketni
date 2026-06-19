@@ -54,7 +54,7 @@ export default function App() {
                 MARKET<span className="text-cyan-400">NI</span>
               </span>
               <span className="text-[10px] bg-neutral-950 text-neutral-400 px-2 py-0.5 border border-white/10 rounded">
-                WALKER
+                MARTIN WALKER
               </span>
             </div>
             <p className="font-sans text-neutral-500 text-xs max-w-sm">
