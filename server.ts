@@ -23,9 +23,73 @@ async function sendEmail({
   const port = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 587;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
-  const fromEmail = process.env.SMTP_FROM_EMAIL || user || "no-reply@marketni.co";
+  const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.EMAIL_RECEIVER || user || "no-reply@marketni.co";
 
   console.log(`[Email Dispatch] Attempting to send email to ${to} with subject: "${subject}"`);
+
+  // --- HTTP API Fallback 1: RESEND (Runs over Port 443 - Fully compatible with Render Free tier) ---
+  if (process.env.RESEND_API_KEY) {
+    console.log(`[Email Dispatch] Found RESEND_API_KEY. Using Resend HTTPS REST API bypass...`);
+    try {
+      const response = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
+          to: [to],
+          reply_to: replyTo,
+          subject: subject,
+          html: html
+        })
+      });
+
+      const data = await response.json() as any;
+      if (response.ok) {
+        console.log(`[Email Dispatch Success] Emailed successfully via Resend API:`, data);
+        return { success: true, messageId: data.id };
+      } else {
+        throw new Error(data.message || JSON.stringify(data));
+      }
+    } catch (err: any) {
+      console.error(`[Email Dispatch Error] Resend HTTP API dispatch failed:`, err);
+      return { success: false, error: `Resend API Error: ${err.message}` };
+    }
+  }
+
+  // --- HTTP API Fallback 2: BREVO (Runs over Port 443 - Fully compatible with Render Free tier) ---
+  if (process.env.BREVO_API_KEY) {
+    console.log(`[Email Dispatch] Found BREVO_API_KEY. Using Brevo HTTPS REST API bypass...`);
+    try {
+      const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: {
+          "api-key": process.env.BREVO_API_KEY,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          sender: { email: fromEmail, name: "System Notifications" },
+          to: [{ email: to }],
+          replyTo: replyTo ? { email: replyTo } : undefined,
+          subject: subject,
+          htmlContent: html
+        })
+      });
+
+      const data = await response.json() as any;
+      if (response.ok) {
+        console.log(`[Email Dispatch Success] Emailed successfully via Brevo API:`, data);
+        return { success: true, messageId: data.messageId };
+      } else {
+        throw new Error(data.message || JSON.stringify(data));
+      }
+    } catch (err: any) {
+      console.error(`[Email Dispatch Error] Brevo HTTP API dispatch failed:`, err);
+      return { success: false, error: `Brevo API Error: ${err.message}` };
+    }
+  }
 
   if (!host || !user || !pass) {
     console.warn(
