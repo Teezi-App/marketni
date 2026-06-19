@@ -54,10 +54,14 @@ async function sendEmail({
         user,
         pass,
       },
+      tls: {
+        // Bypasses SSL handshake hurdles common in serverless/container runtimes
+        rejectUnauthorized: false
+      }
     });
 
     const info = await transporter.sendMail({
-      from: `"Marketni System" <${fromEmail}>`,
+      from: fromEmail, // Clean raw sender address prevents "not owned by user" SMTP rejections
       to,
       replyTo,
       subject,
