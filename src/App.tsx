@@ -19,7 +19,7 @@ export default function App() {
 
   // Setup generic dynamic window title & styling options
   useEffect(() => {
-    document.title = "Martin Walker | Marketni Local Marketing Consultancy";
+    document.title = "Digital Marketing Epsom | Marketni";
   }, []);
 
   return (
@@ -58,7 +58,7 @@ export default function App() {
               </span>
             </div>
             <p className="font-sans text-neutral-500 text-xs max-w-sm">
-              Sleek performance-driven local marketing campaigns tailored personally by Martin Walker. No bloated agency retainers. Just organic maps pack supremacy and Radius-based ad funnels.
+              Sleek custom websites, app design, and high-performance local SEO tailored personally for small businesses in Epsom and Surrey. No bloated agency retainers.
             </p>
           </div>
 

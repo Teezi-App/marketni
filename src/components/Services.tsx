@@ -52,17 +52,17 @@ export default function Services() {
     },
     {
       id: "systems",
-      title: "Conversion Funnels & Review Automations",
-      subtitle: "Frictionless digital systems built for local speed",
-      description: "Stop letting leads slip through broken call-backs or slow website speeds. I build gorgeous, minimal, ultra-fast landing pages with preconfigured booking integrations and automated SMS lead follow-ups.",
+      title: "Custom Websites & Local App Design",
+      subtitle: "Frictionless, high-speed digital products built for Epsom businesses",
+      description: "Stop letting potential customers exit slow builder-template sites. As Epsom's dedicated local app company, we build gorgeous, high-performance custom websites and modular app designs with preconfigured booking integrations.",
       deliverables: [
-        "60fps responsive mobile-first landing experience",
-        "Automated immediate SMS responder configuration",
-        "Calendl/Booking system integrations",
-        "Speed & performance performance optimizations"
+        "Custom desktop & mobile web experiences",
+        "Responsive app design & localized user onboarding",
+        "Calendly/Booking & immediate CRM integrations",
+        "Speed & Core Web Vitals performance optimization"
       ],
       impactMetric: "Avg booking rate increased from 2% to 11%",
-      termTag: "Tech Infrastructure",
+      termTag: "Websites & Apps",
       icon: Layers,
       colorClass: "from-cyan-400 to-purple-550"
     },
