@@ -114,10 +114,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-neutral-600 text-[9px] uppercase tracking-wider">
           <div className="flex items-center space-x-2">
             <Award className="w-3.5 h-3.5 text-neutral-700" />
-            <span>&copy; {new Date().getFullYear()} Marketni Group Ltd. Compiled under Walker Telemetries.</span>
+            <span>&copy; {new Date().getFullYear()} Marketni by Martin Walker.</span>
           </div>
           <div>
-            <span>Consultancy locally supplied throughout England &bull; Made in AI Studio Workspaces</span>
+            <span>Digital Consultancy Epsom &bull; Made by Marketni.</span>
           </div>
         </div>
       </footer>
