@@ -96,10 +96,6 @@ export default function InteractiveAuditer() {
   return (
     <section id="strategy" className="bg-brand-green border-b border-black/15 text-neutral-900 py-24 px-6 md:px-12 relative overflow-hidden">
       
-      {/* Absolute Tech Lines */}
-      <div className="absolute top-0 left-1/4 w-px h-full bg-black/10 pointer-events-none" />
-      <div className="absolute top-0 right-1/4 w-px h-full bg-black/10 pointer-events-none" />
-
       {/* Cybernetic glowing background asset */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/20 rounded-full blur-[140px] pointer-events-none" />
 

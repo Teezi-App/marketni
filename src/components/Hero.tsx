@@ -311,7 +311,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
 
             <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white leading-none font-display uppercase">
               AI CAN MAKE IT <br />
-              LOOK OK. <br />
+              LOOK GREAT. <br />
               NOT MAKE IT <br />
               <span className="text-brand-green">DIFFERENT.</span>
             </h1>

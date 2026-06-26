@@ -36,7 +36,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
 
             <div className="space-y-4 text-neutral-700 leading-relaxed font-light text-base md:text-lg">
               <p>
-                With over 20 years of experience across the UK, Middle East and Africa, I've launched startups, led marketing in multi-million dollar businesses and built products people use.
+                With over 20 years of experience across the UK, Middle East and Africa, I've launched startups, led marketing in multi-million dollar businesses and helped small businesses to go digital.
               </p>
               <p className="font-medium text-neutral-900">
                 Marketni is how I help businesses grow with clarity, direction and purpose.
