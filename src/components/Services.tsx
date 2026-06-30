@@ -58,16 +58,16 @@ export default function Services() {
       solution: "Teezi golf is a bespoke golf networking platform that connects users in real-time. Built using Google Antigravity with payment gateways, It was successfully launched In March and on budget.",
       slides: [
         {
+          image: golfBrandMoodBoardUrl,
+          subheading: "Teezi.golf brand mood board and positioning."
+        },
+        {
           image: teeziGolfUrl,
           subheading: "Teezi.golf landing page funnel to drive subscriptions to the App."
         },
         {
           image: teeiAppUrl,
           subheading: "Teezi.golf app pages."
-        },
-        {
-          image: golfBrandMoodBoardUrl,
-          subheading: "Teezi.golf brand mood board and positioning."
         }
       ],
       bullets: [
