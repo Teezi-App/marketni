@@ -304,7 +304,12 @@ Make sure that you return ONLY valid, parsable JSON matching this structure. Do 
   });
 
   // Serve static assets or configure Vite middleware depending on mode
-  if (process.env.NODE_ENV !== "production") {
+  const isProduction = 
+    process.env.NODE_ENV === "production" || 
+    (typeof __filename !== "undefined" && __filename.includes("dist")) || 
+    (typeof import.meta !== "undefined" && import.meta.url && import.meta.url.includes("dist"));
+
+  if (!isProduction) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
