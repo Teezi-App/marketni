@@ -16,7 +16,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
       <div className="max-w-7xl mx-auto space-y-32">
         
         {/* =======================================================
-            SECTION 1: I HELP BUSINESSES FIND WHAT AI CAN'T
+            SECTION 1: I HELP BUSINESSES DISCOVER THEMSELVES
             ======================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -28,10 +28,9 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
                 I'm Martin Walker
               </span>
             </div>
-
+ 
             <h2 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-none text-neutral-950 font-display">
-              I HELP BUSINESSES <br />
-              FIND WHAT <span className="text-neutral-950 relative inline-block border-b-4 border-brand-green">AI CAN'T.</span>
+              I HELP BUSINESSES TO DISCOVER <span className="text-neutral-950 relative inline-block border-b-4 border-brand-green">THEMSELVES.</span>
             </h2>
 
             <div className="space-y-4 text-neutral-700 leading-relaxed font-light text-base md:text-lg">

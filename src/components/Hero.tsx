@@ -1,20 +1,14 @@
 import { useState, ReactNode } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ChevronLeft, ChevronRight, Layers, Briefcase, Sparkles, Coffee, Shield, Stethoscope, Home, Dumbbell, Star, ShoppingBag } from "lucide-react";
+import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 // @ts-ignore
 import martinPortraitUrl from "../assets/images/Martin-walker-Marketni.png";
-// @ts-ignore
-import teeziGolfUrl from "../assets/images/teezi-golf.jpg";
-// @ts-ignore
-import hanburyHomeUrl from "../assets/images/hanbury-home.jpg";
-// @ts-ignore
-import cmbHomeUrl from "../assets/images/cmb-home.jpg";
-// @ts-ignore
-import electricRichHomeUrl from "../assets/images/electric-rich-home.jpg";
 // @ts-ignore
 import aiSlopMarketingUrl from "../assets/images/ai-slop-marketing.jpg";
 // @ts-ignore
 import aiBusinessKillerUrl from "../assets/images/ai-business-killer.jpg";
+// @ts-ignore
+import aiSlopImageUrl from "../assets/images/ai-slop-image.jpg";
 
 interface HeroProps {
   onScrollToSection: (sectionId: string) => void;
@@ -55,56 +49,8 @@ export default function Hero({ onScrollToSection }: HeroProps) {
       )
     },
     {
-      id: "teezi",
-      brand: "TEEZI GOLF",
-      tagline: "",
-      actionText: "",
-      category: "",
-      bgColor: "bg-neutral-900",
-      textColor: "text-white",
-      accentColor: "text-brand-green",
-      icon: ShoppingBag,
-      customDesign: (
-        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
-          <img src={teeziGolfUrl} alt="Teezi Golf" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-        </div>
-      )
-    },
-    {
-      id: "hanbury",
-      brand: "HANBURY AUTO'S",
-      tagline: "",
-      actionText: "",
-      category: "",
-      bgColor: "bg-neutral-900",
-      textColor: "text-white",
-      accentColor: "text-brand-green",
-      icon: Home,
-      customDesign: (
-        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
-          <img src={hanburyHomeUrl} alt="Hanbury Autos" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-        </div>
-      )
-    },
-    {
-      id: "cmbepsom",
-      brand: "CMB EPSOM",
-      tagline: "",
-      actionText: "",
-      category: "",
-      bgColor: "bg-neutral-900",
-      textColor: "text-white",
-      accentColor: "text-brand-green",
-      icon: Coffee,
-      customDesign: (
-        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
-          <img src={cmbHomeUrl} alt="CMB Epsom" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-        </div>
-      )
-    },
-    {
-      id: "electricrich",
-      brand: "ELECTRICRICH",
+      id: "ai-slop-marketing",
+      brand: "AI Slop Marketing",
       tagline: "",
       actionText: "",
       category: "",
@@ -114,7 +60,23 @@ export default function Hero({ onScrollToSection }: HeroProps) {
       icon: Sparkles,
       customDesign: (
         <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
-          <img src={electricRichHomeUrl} alt="ElectricRich" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src={aiSlopMarketingUrl} alt="AI Slop Marketing" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        </div>
+      )
+    },
+    {
+      id: "ai-slop-image",
+      brand: "AI Slop Image",
+      tagline: "",
+      actionText: "",
+      category: "",
+      bgColor: "bg-neutral-900",
+      textColor: "text-white",
+      accentColor: "text-brand-green",
+      icon: Sparkles,
+      customDesign: (
+        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
+          <img src={aiSlopImageUrl} alt="AI Slop Image" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
       )
     }
