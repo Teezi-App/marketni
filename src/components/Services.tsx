@@ -1,6 +1,35 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ExternalLink, CheckCircle, Smartphone, ArrowRight, Star, Heart, Coffee, Shield, Stethoscope, Award, Zap } from "lucide-react";
+import { ExternalLink, CheckCircle, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+// @ts-ignore
+import teeziGolfUrl from "../assets/images/teezi-golf.jpg";
+// @ts-ignore
+import teeiAppUrl from "../assets/images/Teei-app.jpg";
+// @ts-ignore
+import golfBrandMoodBoardUrl from "../assets/images/golf-brand-mood-board.jpg";
+// @ts-ignore
+import hanburyHomeUrl from "../assets/images/hanbury-home.jpg";
+// @ts-ignore
+import hanburyBookingUrl from "../assets/images/hanbury-autos-booking.jpg";
+// @ts-ignore
+import hanburyHeritageUrl from "../assets/images/Hanbury-autos-heritage.jpg";
+// @ts-ignore
+import cmbHomeUrl from "../assets/images/cmb-home.jpg";
+// @ts-ignore
+import cmbReviewsUrl from "../assets/images/cmb-reviews.jpg";
+// @ts-ignore
+import cmbMapsUrl from "../assets/images/cmb-maps.jpg";
+// @ts-ignore
+import electricRichHomeUrl from "../assets/images/electric-rich-home.jpg";
+// @ts-ignore
+import richServicesUrl from "../assets/images/rich-services.jpg";
+// @ts-ignore
+import emergencyUrl from "../assets/images/emergency.jpg";
+
+interface CarouselSlide {
+  image: string;
+  subheading: string;
+}
 
 interface ClientCaseStudy {
   id: string;
@@ -9,33 +38,14 @@ interface ClientCaseStudy {
   industry: string;
   location: string;
   metric: string;
-  challenge: string;
   solution: string;
-  beforeMockup: {
-    title: string;
-    description: string;
-    vibe: string;
-    details: string[];
-    bgClass: string;
-  };
-  afterMockup: {
-    title: string;
-    description: string;
-    vibe: string;
-    details: string[];
-    bgClass: string;
-    accentClass: string;
-  };
+  slides: CarouselSlide[];
+  bullets?: string[];
 }
 
 export default function Services() {
   const [activeCaseStudy, setActiveCaseStudy] = useState<string>("teezi");
-  const [viewModes, setViewModes] = useState<Record<string, "before" | "after">>({
-    teezi: "after",
-    northfield: "after",
-    urbanbrew: "after",
-    brightdental: "after"
-  });
+  const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
   const caseStudies: ClientCaseStudy[] = [
     {
@@ -44,107 +54,140 @@ export default function Services() {
       url: "www.teezi.golf",
       industry: "Premium Golf Apparel & Branding",
       location: "Epsom & Surrey Golf Corridor",
-      metric: "Brand Launch: Sold Out in 48h",
-      challenge: "A brand new premium Surrey golf apparel startup built entirely from scratch with no prior platform, digital identity, or online presence.",
-      solution: "Fully designed, developed, and branded a high-conversion lifestyle and e-commerce platform using Google Antigravity infrastructure and Stripe custom subscription engines.",
-      beforeMockup: {
-        title: "TEEZI - Prior State",
-        description: "Zero previous platform, zero digital footprint, and zero local brand recognition.",
-        vibe: "Pre-Launch (No Platform)",
-        details: ["No Existing Domain Setup", "No Brand Identity Assets", "No Customer Database", "No E-commerce Processing"],
-        bgClass: "bg-neutral-100 text-neutral-800 border-neutral-300"
-      },
-      afterMockup: {
-        title: "TEEZI.GOLF - Bespoke E-Commerce Platform",
-        description: "High-performance Swiss-style design, custom-engineered UI/UX customer journeys, and fluid responsive catalog interaction.",
-        vibe: "Swiss Luxury & Sports Elegance",
-        details: ["Full Custom Branding & UX", "Google Antigravity Backend", "Stripe Subscription Engines", "Low Infrastructure Costs"],
-        bgClass: "bg-neutral-950 text-white border-brand-green/30",
-        accentClass: "text-brand-green"
-      }
+      metric: "Startup Launch: 500+ signups In 48h",
+      solution: "Teezi golf is a bespoke golf networking platform that connects users in real-time. Built using Google Antigravity with payment gateways, It was successfully launched In March and on budget.",
+      slides: [
+        {
+          image: teeziGolfUrl,
+          subheading: "Teezi.golf landing page funnel to drive subscriptions to the App."
+        },
+        {
+          image: teeiAppUrl,
+          subheading: "Teezi.golf app pages."
+        },
+        {
+          image: golfBrandMoodBoardUrl,
+          subheading: "Teezi.golf brand mood board and positioning."
+        }
+      ],
+      bullets: [
+        "Brand playbook and direction",
+        "Multi-device app, no install required",
+        "Built for low-data consumption",
+        "Data-base and real-time capture",
+        "CRM, Analytic tracking all touch-points",
+        "Social media Integrations"
+      ]
     },
     {
-      id: "northfield",
-      name: "NORTHFIELD LAW",
-      url: "www.northfieldlaw.co.uk",
-      industry: "Corporate & Regional Litigation",
-      location: "Epsom Office Corridor",
-      metric: "Consultation Booking Rate: 2% → 11%",
-      challenge: "Standard, slow-loading WordPress theme crammed with generic stock photos of gavels and scales of justice, projecting zero local superiority.",
-      solution: "Crafted an authoritative, editorial editorial interface in black and white, integrated with Martin's signature photography and a seamless, high-speed consulting form.",
-      beforeMockup: {
-        title: "Northfield Solicitors Surrey",
-        description: "Slow WordPress template, generic stock icons, massive walls of unreadable legal text, and a complicated PDF intake form.",
-        vibe: "1990s Corporate Template",
-        details: ["Unresponsive on Mobile", "Generic Stock Images", "Messy Contact Email Links", "Confusing Page Hierarchy"],
-        bgClass: "bg-slate-100 text-slate-800 border-slate-300"
-      },
-      afterMockup: {
-        title: "NORTHFIELD - Supreme Legal Authority",
-        description: "Aesthetic high-contrast editorial system, integrated 1-click booking schedules, and highly personalized local partner profiles.",
-        vibe: "High-End Legal Editorial",
-        details: ["Fully Responsive Layout", "Custom Local Partner Headshots", "Dynamic Appointment Calendar", "Secure SSL Form Pipeline"],
-        bgClass: "bg-zinc-950 text-neutral-100 border-brand-green/20",
-        accentClass: "text-white"
-      }
+      id: "hanbury",
+      name: "HANBURY AUTO'S",
+      url: "www.hanburyautos.co.uk",
+      industry: "Automotive Heritage & Service",
+      location: "Heritage pitch",
+      metric: "Business focus & Modernised approach",
+      solution: "Hanbury Auto's website re-design and build focuses on celebrating the company's rich heritage, which was previously completely missing. We built a custom slot booking database and streamlined customer information flows to elevate brand identity and expand local marketing activities.",
+      slides: [
+        {
+          image: hanburyHomeUrl,
+          subheading: "Hanbury autos website re-design and build."
+        },
+        {
+          image: hanburyBookingUrl,
+          subheading: "Custom database for slots and customer information to expand marketing activities."
+        },
+        {
+          image: hanburyHeritageUrl,
+          subheading: "We focused on the companies heritage which was missing completely."
+        }
+      ],
+      bullets: [
+        "Brand and website revamp",
+        "New business opportunities Identified",
+        "Social media strategy",
+        "Customer data captured",
+        "Reduced platform running costs",
+        "Business strategy guidance"
+      ]
     },
     {
-      id: "urbanbrew",
-      name: "URBAN BREW",
-      url: "www.urbanbrewcoffee.co.uk",
-      industry: "Artisan Coffee Subscription Box",
-      location: "Surrey & South London Radius",
-      metric: "1,200+ Active Monthly Subscribers",
-      challenge: "No online e-commerce infrastructure; business relied solely on foot traffic, putting them at the mercy of climbing high-street rental costs.",
-      solution: "Designed a clean, sensory-focused subscription engine with micro-targeted 5-mile radius social ads with custom copy and clear local origin values.",
-      beforeMockup: {
-        title: "Urban Brew - Coffee Shop Blog",
-        description: "Simple brochure page with a basic map, operating hours, and an outdated blog page with no online shop.",
-        vibe: "Static Digital Brochure",
-        details: ["Zero Revenue Online", "No Mobile Ordering", "Static Location Map Only", "Standard Typography"],
-        bgClass: "bg-orange-50 text-orange-950 border-orange-200"
-      },
-      afterMockup: {
-        title: "URBAN BREW - Sensory Coffee Hub",
-        description: "Subscription builder interface, recurring payments integration, custom flavor diagnostic tool, and hyper-fast web delivery dashboard.",
-        vibe: "Cozy Modern Artisan E-Shop",
-        details: ["Recurring Revenue Engine", "1-Minute Subscription Flow", "Interactive Flavor Tool", "Rich Media & Video Frames"],
-        bgClass: "bg-[#14110f] text-[#f7f5f0] border-brand-green/20",
-        accentClass: "text-amber-500"
-      }
+      id: "cmbepsom",
+      name: "CMB EPSOM",
+      url: "www.cmbepsom.co.uk",
+      industry: "Local Services & Business Digitalization",
+      location: "Epsom Surrey",
+      metric: "Go digital pack + Marketing strategy",
+      solution: "CMB had no online presence. We supported them with our new Go Digital Pack designed for small businesses. By focusing on customer reviews and their strategic physical location, we created an effective and modern search footprint.",
+      slides: [
+        {
+          image: cmbHomeUrl,
+          subheading: "CMB had no online presence. We supported them with our new Go Digital Pack designed for small businesses."
+        },
+        {
+          image: cmbReviewsUrl,
+          subheading: "No heritage, No problem. We focused the business on their reviews."
+        },
+        {
+          image: cmbMapsUrl,
+          subheading: "Business location matters. We enhanced this page to focus on their strengths. Location was the strategy."
+        }
+      ],
+      bullets: [
+        "Go Digital Pack deployment",
+        "Social review integration",
+        "Business location optimization",
+        "Enhanced search visibility",
+        "Mobile-optimized web design",
+        "Strategic marketing support"
+      ]
     },
     {
-      id: "brightdental",
-      name: "BRIGHT DENTAL",
-      url: "www.brightdentalepsom.co.uk",
-      industry: "Premium Family Clinic & Orthodontics",
-      location: "Epsom High Street",
-      metric: "Cost Per Lead Slashed: £45.00 → £4.25",
-      challenge: "High spend on national PPC keywords with a generic, forgettable 'We care for your smile' slogan, yielding low-quality cold traffic.",
-      solution: "Implemented local Maps-Pack geocoding domination, modern clean clinical interfaces, and high-conversion PR landing pages with automated review prompts.",
-      beforeMockup: {
-        title: "Bright Dental Surgery Epsom",
-        description: "Confusing booking calendar, broken links, generic pricing table, and clinical stock images of doctors that looked fake.",
-        vibe: "Clunky Health Directory",
-        details: ["£45+ Lead Acquisition Cost", "Outdated Patient Portal", "High Desktop Bounce Rate", "Overused Blue Colors"],
-        bgClass: "bg-sky-50 text-sky-950 border-sky-200"
-      },
-      afterMockup: {
-        title: "BRIGHT DENTAL - Modern Dental Studio",
-        description: "Custom premium clinic design, interactive treatment pricing calculators, Google Reviews live feed, and instant NHS/Private registration.",
-        vibe: "Clean, Safe Clinical Luxury",
-        details: ["NHS/Private Easy Toggle", "Dynamic Cost Estimator", "Automated Map-Pack Triggers", "Ultra-Modern Micro-Interactions"],
-        bgClass: "bg-slate-950 text-slate-100 border-brand-green/20",
-        accentClass: "text-cyan-400"
-      }
+      id: "electricrich",
+      name: "ELECTRICRICH",
+      url: "www.electricrich.co.uk",
+      industry: "Professional Electrical Services",
+      location: "Surrey & Epsom",
+      metric: "Emergency Support & Brand Launch",
+      solution: "We created a new brand identity and website for ElectricRich, establishing a powerful digital presence. By highlighting their emergency call-out services and integrating instant WhatsApp chat functionality, we built a direct, high-converting channel for local customers.",
+      slides: [
+        {
+          image: electricRichHomeUrl,
+          subheading: "Created a new brand Identity and website for a local electrician."
+        },
+        {
+          image: richServicesUrl,
+          subheading: "Created a localised SEO list of electric services."
+        },
+        {
+          image: emergencyUrl,
+          subheading: "This was our focus point, emergency call outs with instant whatsapp chat integrated."
+        }
+      ],
+      bullets: [
+        "Brand identity design",
+        "Local SEO services setup",
+        "WhatsApp chat integration",
+        "Mobile-first responsive layout",
+        "Emergency capture system",
+        "Ongoing strategy support"
+      ]
     }
   ];
 
-  const handleToggleViewMode = (id: string, mode: "before" | "after") => {
-    setViewModes(prev => ({ ...prev, [id]: mode }));
+  const handleCaseStudyChange = (studyId: string) => {
+    setActiveCaseStudy(studyId);
+    setActiveSlideIndex(0);
   };
 
   const currentStudy = caseStudies.find(c => c.id === activeCaseStudy) || caseStudies[0];
+
+  const handleNextSlide = () => {
+    setActiveSlideIndex((prev) => (prev + 1) % currentStudy.slides.length);
+  };
+
+  const handlePrevSlide = () => {
+    setActiveSlideIndex((prev) => (prev - 1 + currentStudy.slides.length) % currentStudy.slides.length);
+  };
 
   return (
     <section id="services" className="bg-[#050505] border-t border-b border-white/10 text-white py-24 px-6 md:px-12 relative overflow-hidden font-sans">
@@ -166,7 +209,7 @@ export default function Services() {
             </h2>
           </div>
           <div className="font-mono text-xs max-w-md text-neutral-400 uppercase tracking-wider leading-relaxed">
-            I don't write generic, complicated service descriptions. I build custom, high-converting digital products. See exactly how we transform standard templates into local category leaders.
+            I don't create generic off the shelf products. I build custom, high-converting digital products with the latest code that can be scaled into any digital format, including apps.
           </div>
         </div>
 
@@ -175,7 +218,7 @@ export default function Services() {
           {caseStudies.map((study) => (
             <button
               key={study.id}
-              onClick={() => setActiveCaseStudy(study.id)}
+              onClick={() => handleCaseStudyChange(study.id)}
               className={`px-5 py-3 font-mono text-xs tracking-widest uppercase transition-all duration-300 border rounded-none cursor-pointer ${
                 activeCaseStudy === study.id
                   ? "bg-brand-green text-black border-brand-green font-black"
@@ -187,7 +230,7 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Main Interactive Case Study Area */}
+        {/* Main Case Study Area */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Block: Client Narrative & Metrics */}
@@ -229,85 +272,32 @@ export default function Services() {
               </span>
             </div>
 
-            {/* Before / After Narrative */}
-            <div className="space-y-6 font-sans text-sm leading-relaxed">
-              <div className="space-y-2">
-                <h4 className="font-mono text-[10px] text-red-400 uppercase tracking-widest font-black">
-                  {currentStudy.id === "teezi" ? "The Brand New Startup Challenge (Before)" : "The Competitive Blocker (Before)"}
-                </h4>
-                <p className="text-neutral-400 font-light">
-                  {currentStudy.challenge}
-                </p>
-              </div>
+            {/* Main Written Content - Solution Paragraph */}
+            <div className="space-y-6 font-sans text-sm leading-relaxed text-neutral-300">
+              <p className="font-light">
+                {currentStudy.solution}
+              </p>
 
-              <div className="space-y-2 border-t border-white/5 pt-4">
-                <h4 className="font-mono text-[10px] text-brand-green uppercase tracking-widest font-black">
-                  {currentStudy.id === "teezi" ? "The Bespoke Launch Architecture (After)" : "The Custom Playbook Solution (After)"}
-                </h4>
-                <p className="text-neutral-200 font-light">
-                  {currentStudy.solution}
-                </p>
-                {currentStudy.id === "teezi" && (
-                  <div className="mt-4 pt-4 border-t border-white/5 space-y-3">
-                    <h5 className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest font-black">
-                      Project Development Includes:
-                    </h5>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-xs font-mono text-neutral-400">
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Full branding and platform identity development</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>UI / UX design and customer journey optimisation</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Built using Google Antigravity infrastructure</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Database architecture and live data management</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Stripe subscription and payment integrations</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>API integrations and scalable backend connectivity</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>CRM and customer lifecycle workflows</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Analytics and tracking system integrations</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Push notification and real-time engagement systems</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Security-focused platform implementation</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>AI-assisted development workflows and automation</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Low operational infrastructure model & data costs</span>
-                      </li>
-                      <li className="flex items-start space-x-1.5 col-span-1 sm:col-span-2">
-                        <span className="text-brand-green font-bold">&bull;</span>
-                        <span>Community-led engagement & retention systems KPI's</span>
-                      </li>
-                    </ul>
-                  </div>
-                )}
+              {/* Tighter, streamlined context details */}
+              <div className="mt-6 pt-6 border-t border-white/5 space-y-3">
+                <h5 className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest font-black">
+                  Product Development Includes:
+                </h5>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono text-neutral-400">
+                  {(currentStudy.bullets || [
+                    "Swiss UI/UX Design",
+                    "Google Antigravity Setup",
+                    "Stripe Subscription Core",
+                    "Lightweight CRM & Analytics",
+                    "Zero-Waste Serverless Infra",
+                    "Continuous Secure Delivery"
+                  ]).map((bullet, index) => (
+                    <li key={index} className="flex items-center space-x-2">
+                      <span className="text-brand-green font-bold">&bull;</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
@@ -323,152 +313,89 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Right Block: Dynamic Interactive Before & After Mockup Screen */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Right Block: Dynamic Mockup Image Carousel */}
+          <div className="lg:col-span-7 space-y-4">
             
-            {/* Control Switcher Bar */}
-            <div className="flex justify-between items-center bg-neutral-950 border border-white/10 p-2.5 rounded-none">
-              <div className="flex items-center space-x-2">
-                <Smartphone className="w-4 h-4 text-neutral-500" />
-                <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-wider">
-                  Interactive Browser Preview
-                </span>
-              </div>
-
-              {/* View toggle buttons */}
-              <div className="flex space-x-1.5">
-                <button
-                  onClick={() => handleToggleViewMode(currentStudy.id, "before")}
-                  className={`px-3 py-1.5 font-mono text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer ${
-                    viewModes[currentStudy.id] === "before"
-                      ? "bg-red-950/80 text-red-400 border border-red-900/60"
-                      : "bg-[#050505] text-neutral-500 border border-white/5 hover:text-neutral-300"
-                  }`}
-                >
-                  BEFORE [Generic]
-                </button>
-                <button
-                  onClick={() => handleToggleViewMode(currentStudy.id, "after")}
-                  className={`px-3 py-1.5 font-mono text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer ${
-                    viewModes[currentStudy.id] === "after"
-                      ? "bg-brand-green/20 text-brand-green border border-brand-green/45"
-                      : "bg-[#050505] text-neutral-500 border border-white/5 hover:text-neutral-300"
-                  }`}
-                >
-                  AFTER [Bespoke]
-                </button>
-              </div>
-            </div>
-
-            {/* Mockup Frame Container */}
-            <div className="aspect-[16/10] w-full border border-white/10 rounded-md p-4 bg-neutral-950 shadow-2xl relative overflow-hidden group">
+            {/* Carousel Frame Container */}
+            <div className="w-full border border-white/10 rounded-md bg-neutral-950 shadow-2xl relative overflow-hidden group">
               
-              {/* Dynamic content rendering with slide animation */}
+              {/* Dynamic image rendering with slide animation */}
               <AnimatePresence mode="wait">
-                {viewModes[currentStudy.id] === "before" ? (
-                  <motion.div
-                    key="before"
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 30 }}
-                    transition={{ duration: 0.3 }}
-                    className={`w-full h-full p-6 flex flex-col justify-between border rounded ${currentStudy.beforeMockup.bgClass} relative`}
-                  >
-                    {/* Cluttered overlay stamp */}
-                    <div className="absolute top-2 right-2 bg-red-600 text-white text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded uppercase select-none animate-pulse">
-                      Generic Template Slop
-                    </div>
+                {currentStudy.slides.map((slide, idx) => {
+                  if (idx !== activeSlideIndex) return null;
 
-                    <div className="flex justify-between items-center border-b pb-2">
-                      <span className="font-bold text-xs font-sans tracking-tight">
-                        {currentStudy.beforeMockup.title}
-                      </span>
-                      <span className="text-[8px] uppercase tracking-wider opacity-60">
-                        {currentStudy.beforeMockup.vibe}
-                      </span>
-                    </div>
-
-                    <div className="my-auto space-y-3">
-                      <h5 className="text-base font-bold leading-tight font-sans text-neutral-900">
-                        {currentStudy.beforeMockup.description}
-                      </h5>
-                      
-                      <div className="grid grid-cols-2 gap-2 text-[10px] font-mono">
-                        {currentStudy.beforeMockup.details.map((detail, idx) => (
-                          <div key={idx} className="flex items-center space-x-1.5 text-neutral-600">
-                            <span className="text-red-500 font-bold">&times;</span>
-                            <span>{detail}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="border-t pt-2 flex justify-between items-center">
-                      <span className="text-[9px] opacity-50 font-mono">Slow server load time: ~5.2s</span>
-                      <button className="px-3 py-1 bg-neutral-300 text-neutral-600 text-[9px] font-sans rounded disabled cursor-not-allowed" disabled>
-                        Submit Form
-                      </button>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="after"
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -30 }}
-                    transition={{ duration: 0.3 }}
-                    className={`w-full h-full p-6 flex flex-col justify-between border rounded ${currentStudy.afterMockup.bgClass} relative`}
-                  >
-                    {/* Sleek stamp */}
-                    <div className="absolute top-2 right-2 bg-brand-green text-black text-[8px] font-mono font-black tracking-widest px-2 py-0.5 rounded uppercase select-none">
-                      Handcrafted Masterpiece
-                    </div>
-
-                    <div className="flex justify-between items-center border-b border-white/10 pb-2">
-                      <span className="font-mono text-xs font-black tracking-widest text-white">
-                        {currentStudy.afterMockup.title}
-                      </span>
-                      <span className={`text-[8px] uppercase tracking-wider font-mono font-bold ${currentStudy.afterMockup.accentClass}`}>
-                        {currentStudy.afterMockup.vibe}
-                      </span>
-                    </div>
-
-                    <div className="my-auto space-y-3">
-                      <h5 className="text-base font-black leading-tight font-display tracking-tight text-white uppercase">
-                        {currentStudy.afterMockup.description}
-                      </h5>
-
-                      <div className="grid grid-cols-2 gap-2 text-[10px] font-mono">
-                        {currentStudy.afterMockup.details.map((detail, idx) => (
-                          <div key={idx} className="flex items-center space-x-1.5 text-neutral-300">
-                            <span className={`font-bold ${currentStudy.afterMockup.accentClass}`}>&bull;</span>
-                            <span>{detail}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="border-t border-white/10 pt-2 flex justify-between items-center">
-                      <span className={`text-[9px] font-mono font-bold ${currentStudy.afterMockup.accentClass}`}>
-                        Lightning fast load time: ~0.9s
-                      </span>
-                      <button className="px-3 py-1 bg-brand-green text-black text-[9px] font-mono font-black uppercase tracking-wider hover:bg-white transition-colors">
-                        1-Click Book &rarr;
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
+                  return (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -40 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="w-full h-auto flex items-center justify-center bg-neutral-950"
+                    >
+                      <img
+                        src={slide.image}
+                        alt={slide.subheading}
+                        referrerPolicy="no-referrer"
+                        className="w-full h-auto block"
+                      />
+                      {/* Dark gradient overlay at the bottom for readability */}
+                      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none" />
+                    </motion.div>
+                  );
+                })}
               </AnimatePresence>
 
               {/* Decorative side reflection overlay */}
               <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white/5 to-transparent pointer-events-none transform skew-x-12" />
             </div>
 
-            {/* Explanatory footer remark */}
-            <div className="text-center">
-              <p className="font-mono text-[9px] text-neutral-500 uppercase tracking-widest leading-relaxed">
-                Tip: Click the <strong className="text-red-400 font-bold">BEFORE</strong> and <strong className="text-brand-green font-bold">AFTER</strong> buttons above to see the real structural and conversion rate optimization layout transition.
+            {/* Slide explanation subheading box */}
+            <div className="bg-neutral-950/80 border border-white/5 p-4 relative">
+              <div className="absolute top-0 left-0 w-1 h-full bg-brand-green" />
+              <span className="font-mono text-[9px] text-brand-green uppercase tracking-widest font-bold block">
+                Current Preview // Slide 0{activeSlideIndex + 1} of 0{currentStudy.slides.length}
+              </span>
+              <p className="font-sans text-xs text-neutral-300 mt-1 font-light leading-relaxed">
+                {currentStudy.slides[activeSlideIndex]?.subheading}
               </p>
+            </div>
+
+            {/* Interactive Carousel Controls */}
+            <div className="flex items-center justify-between w-full mt-2">
+              
+              {/* Arrows */}
+              <div className="flex space-x-2">
+                <button
+                  onClick={handlePrevSlide}
+                  className="p-2.5 bg-neutral-950 border border-white/10 hover:border-brand-green text-neutral-400 hover:text-brand-green transition rounded-full cursor-pointer"
+                  title="Previous Slide"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                
+                <button
+                  onClick={handleNextSlide}
+                  className="p-2.5 bg-neutral-950 border border-white/10 hover:border-brand-green text-neutral-400 hover:text-brand-green transition rounded-full cursor-pointer"
+                  title="Next Slide"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Indicator dots */}
+              <div className="flex space-x-1.5">
+                {currentStudy.slides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveSlideIndex(i)}
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                      i === activeSlideIndex ? "bg-brand-green w-4" : "bg-neutral-700"
+                    }`}
+                  />
+                ))}
+              </div>
+
             </div>
 
           </div>

@@ -3,6 +3,14 @@ import { motion, AnimatePresence } from "motion/react";
 import { ChevronLeft, ChevronRight, Layers, Briefcase, Sparkles, Coffee, Shield, Stethoscope, Home, Dumbbell, Star, ShoppingBag } from "lucide-react";
 // @ts-ignore
 import martinPortraitUrl from "../assets/images/Martin-walker-Marketni.png";
+// @ts-ignore
+import teeziGolfUrl from "../assets/images/teezi-golf.jpg";
+// @ts-ignore
+import hanburyHomeUrl from "../assets/images/hanbury-home.jpg";
+// @ts-ignore
+import cmbHomeUrl from "../assets/images/cmb-home.jpg";
+// @ts-ignore
+import electricRichHomeUrl from "../assets/images/electric-rich-home.jpg";
 
 interface HeroProps {
   onScrollToSection: (sectionId: string) => void;
@@ -24,50 +32,12 @@ interface WebPreviewCard {
 export default function Hero({ onScrollToSection }: HeroProps) {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
 
-  // The 5 distinct mockups shown in the uploaded UI carousel
+  // The 4 distinct client mockups matching the services tabs in exact order
   const previewCards: WebPreviewCard[] = [
     {
-      id: "c1",
-      brand: "URBAN BREW",
-      tagline: "Premium Coffee Delivered",
-      actionText: "SHOP NOW",
-      category: "E-Commerce",
-      bgColor: "bg-neutral-900",
-      textColor: "text-white",
-      accentColor: "text-amber-500",
-      icon: Coffee,
-      customDesign: (
-        <div className="w-full h-full flex flex-col justify-between p-6 bg-[#16120e] relative overflow-hidden font-sans border border-amber-900/40">
-          <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl" />
-          <div className="flex justify-between items-center">
-            <span className="font-serif text-sm tracking-widest text-amber-500 font-bold">URBAN BREW</span>
-            <span className="text-[9px] px-2 py-0.5 bg-neutral-950 text-amber-500 rounded border border-amber-500/20 uppercase font-mono">Espresso Shop</span>
-          </div>
-          
-          <div className="my-auto space-y-2">
-            <h4 className="text-xl font-bold tracking-tight text-white leading-tight font-serif">
-              Premium Coffee <br />
-              Delivered To <br />
-              <span className="text-amber-500 underline decoration-amber-600">Your Doorstep.</span>
-            </h4>
-            <p className="text-[10px] text-neutral-400 font-light">
-              Single-origin beans freshly roasted on-demand in micro-batches.
-            </p>
-          </div>
-
-          <div className="flex justify-between items-center pt-2 border-t border-neutral-800">
-            <span className="text-xs font-bold text-white font-mono">$14.99/mo</span>
-            <button className="px-3 py-1.5 bg-amber-500 text-black text-[9px] font-bold uppercase rounded-none hover:bg-amber-400 transition-colors">
-              SHOP NOW &rarr;
-            </button>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: "c2",
+      id: "teezi",
       brand: "TEEZI GOLF",
-      tagline: "Swiss Luxury & Sports Elegance",
+      tagline: "Bespoke Golf Connections Platform",
       actionText: "EXPLORE COLLECTION",
       category: "Bespoke E-Commerce",
       bgColor: "bg-neutral-900",
@@ -75,147 +45,146 @@ export default function Hero({ onScrollToSection }: HeroProps) {
       accentColor: "text-brand-green",
       icon: ShoppingBag,
       customDesign: (
-        <div className="w-full h-full flex flex-col justify-between p-6 bg-[#0a0c0e] relative overflow-hidden font-sans border border-brand-green/20">
-          <div className="absolute top-0 right-0 w-full h-1 bg-brand-green" />
-          
-          <div className="flex justify-between items-center">
+        <div className="w-full h-full flex flex-col justify-between bg-neutral-950 relative overflow-hidden font-sans border border-brand-green/20">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img src={teeziGolfUrl} alt="Teezi Golf" className="w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
+          </div>
+          {/* Top bar */}
+          <div className="relative z-10 p-5 flex justify-between items-center">
             <span className="font-mono text-[10px] tracking-widest text-neutral-300 font-bold">TEEZI.GOLF</span>
-            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Surrey</span>
+            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Active</span>
           </div>
-          
-          {/* A luxury sport layout with bold Swiss typography */}
-          <div className="my-auto space-y-3 text-left">
-            <span className="font-mono text-[8px] text-neutral-400 tracking-widest uppercase block">LAUNCHING 2026 // FROM SCRATCH</span>
-            <h4 className="text-xl font-black tracking-tight text-white leading-none uppercase">
-              SWISS LUXURY<br />
-              <span className="text-brand-green">MEETS SPORT.</span>
+          {/* Bottom/Middle content */}
+          <div className="relative z-10 p-5 mt-auto space-y-2">
+            <span className="font-mono text-[8px] text-brand-green tracking-widest uppercase block">Bespoke Golf Connections</span>
+            <h4 className="text-lg font-black tracking-tight text-white leading-tight uppercase">
+              TEEZI GOLF PLATFORM
             </h4>
-            <p className="text-[9px] text-neutral-400 font-light leading-relaxed">
-              Fully custom lifestyle hub built on Google Antigravity infrastructure & Stripe subscription engines.
+            <p className="text-[9px] text-neutral-300 font-light leading-relaxed">
+              A bespoke golf networking platform connecting users in real-time with Google Antigravity & payment gateways.
             </p>
-          </div>
-
-          <div className="flex items-center justify-between pt-2 border-t border-neutral-900">
-            <span className="text-[8px] text-neutral-500 font-mono">Premium Apparel Hub</span>
-            <button className="px-2.5 py-1.5 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
-              EXPLORE COLLECTION
-            </button>
+            <div className="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
+              <span className="text-[9px] font-bold text-neutral-400 font-mono">500+ signups in 48h</span>
+              <button className="px-2.5 py-1 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
+                EXPLORE
+              </button>
+            </div>
           </div>
         </div>
       )
     },
     {
-      id: "c3",
-      brand: "BRIGHT DENTAL",
-      tagline: "Quality Care For Your Smile",
-      actionText: "BOOK APPOINTMENT",
-      category: "Medical Clinic",
-      bgColor: "bg-slate-900",
+      id: "hanbury",
+      brand: "HANBURY AUTO'S",
+      tagline: "Automotive Heritage & Service",
+      actionText: "BOOK SLOT",
+      category: "Local Service",
+      bgColor: "bg-neutral-900",
       textColor: "text-white",
-      accentColor: "text-cyan-400",
-      icon: Stethoscope,
-      customDesign: (
-        <div className="w-full h-full flex flex-col justify-between p-6 bg-[#0c1319] relative overflow-hidden font-sans border border-cyan-900/30">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-1">
-              <span className="w-2 h-2 bg-cyan-400 rounded-full" />
-              <span className="font-sans text-[11px] font-extrabold tracking-tight text-white">BRIGHT DENTAL</span>
-            </div>
-            <span className="text-[8px] bg-cyan-500/10 text-cyan-400 px-1.5 py-0.5 rounded font-mono">Epsom Clinic</span>
-          </div>
-
-          <div className="my-auto space-y-3">
-            <h4 className="text-lg font-black tracking-tight text-white leading-tight">
-              Quality Care <br />
-              For Your Smile.
-            </h4>
-            
-            {/* Minimal testimonial banner */}
-            <div className="bg-neutral-950/40 p-2 border-l-2 border-cyan-400 flex items-center justify-between">
-              <div className="flex space-x-0.5">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-2 h-2 fill-cyan-400 text-cyan-400" />)}
-              </div>
-              <span className="text-[7px] text-neutral-400 font-mono">200+ Reviews</span>
-            </div>
-          </div>
-
-          <button className="w-full py-2 bg-cyan-400 text-black text-[9px] font-bold uppercase tracking-widest hover:bg-white transition-colors">
-            BOOK APPOINTMENT
-          </button>
-        </div>
-      )
-    },
-    {
-      id: "c4",
-      brand: "NORTH BUILDS",
-      tagline: "Building Better Spaces",
-      actionText: "LEARN MORE",
-      category: "Architecture & Build",
-      bgColor: "bg-stone-900",
-      textColor: "text-white",
-      accentColor: "text-yellow-500",
+      accentColor: "text-brand-green",
       icon: Home,
       customDesign: (
-        <div className="w-full h-full flex flex-col justify-between p-6 bg-[#121110] relative overflow-hidden font-sans border border-stone-800">
-          <div className="flex justify-between items-center">
-            <span className="text-[9px] font-mono tracking-widest text-stone-500 uppercase font-black">NORTH BUILDS</span>
-            <span className="text-[8px] text-stone-400 font-mono">London & Surrey</span>
+        <div className="w-full h-full flex flex-col justify-between bg-neutral-950 relative overflow-hidden font-sans border border-brand-green/20">
+          <div className="absolute inset-0 z-0">
+            <img src={hanburyHomeUrl} alt="Hanbury Autos" className="w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
           </div>
-
-          <div className="my-auto space-y-2">
-            <h4 className="text-xl font-light tracking-tight text-white leading-tight">
-              Building <br />
-              <strong className="font-extrabold text-neutral-100">Better Spaces.</strong>
+          <div className="relative z-10 p-5 flex justify-between items-center">
+            <span className="font-mono text-[10px] tracking-widest text-neutral-300 font-bold">HANBURY AUTOS</span>
+            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Heritage Focus</span>
+          </div>
+          <div className="relative z-10 p-5 mt-auto space-y-2">
+            <span className="font-mono text-[8px] text-brand-green tracking-widest uppercase block">Business focus & Modernised approach</span>
+            <h4 className="text-lg font-black tracking-tight text-white leading-tight uppercase">
+              HANBURY AUTO'S
             </h4>
-            <p className="text-[9px] text-stone-400">
-              Modern architect-led commercial and residential construction.
+            <p className="text-[9px] text-neutral-300 font-light leading-relaxed">
+              Bespoke re-design celebrating history, equipped with a custom database for slot booking and customer data management.
             </p>
-          </div>
-
-          <div className="space-y-1">
-            <div className="w-full h-0.5 bg-stone-800" />
-            <div className="flex justify-between items-center text-[7px] text-stone-500 font-mono uppercase">
-              <span>EST. 2012</span>
-              <span>ISO CERTIFIED</span>
+            <div className="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
+              <span className="text-[9px] font-bold text-neutral-400 font-mono">Expanded Marketing</span>
+              <button className="px-2.5 py-1 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
+                BOOK SLOT
+              </button>
             </div>
           </div>
         </div>
       )
     },
     {
-      id: "c5",
-      brand: "GREAT BUILD",
-      tagline: "Your Fitness Journey Starts Here",
-      actionText: "START TRIAL",
-      category: "Leisure & Wellness",
-      bgColor: "bg-[#0b0c10]",
+      id: "cmbepsom",
+      brand: "CMB EPSOM",
+      tagline: "Local Services & Digitalization",
+      actionText: "VISIT SITE",
+      category: "Local Business",
+      bgColor: "bg-neutral-900",
       textColor: "text-white",
-      accentColor: "text-lime-400",
-      icon: Dumbbell,
+      accentColor: "text-brand-green",
+      icon: Coffee,
       customDesign: (
-        <div className="w-full h-full flex flex-col justify-between p-6 bg-[#080a0d] relative overflow-hidden font-sans border border-lime-500/20">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-lime-400/5 rounded-full blur-xl" />
-          <div className="flex justify-between items-center">
-            <span className="text-[11px] font-black italic text-lime-400 tracking-wider">GREAT BUILD</span>
-            <span className="text-[8px] border border-lime-400 text-lime-400 px-1.5 py-0.5 font-bold">24/7 PASS</span>
+        <div className="w-full h-full flex flex-col justify-between bg-neutral-950 relative overflow-hidden font-sans border border-brand-green/20">
+          <div className="absolute inset-0 z-0">
+            <img src={cmbHomeUrl} alt="CMB Epsom" className="w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
           </div>
-
-          <div className="my-auto space-y-2">
-            <h4 className="text-lg font-black tracking-tight text-white uppercase italic leading-none">
-              Your Fitness <br />
-              Journey <br />
-              Starts Here.
+          <div className="relative z-10 p-5 flex justify-between items-center">
+            <span className="font-mono text-[10px] tracking-widest text-neutral-300 font-bold">CMB EPSOM</span>
+            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Go Digital</span>
+          </div>
+          <div className="relative z-10 p-5 mt-auto space-y-2">
+            <span className="font-mono text-[8px] text-brand-green tracking-widest uppercase block">Go digital pack + Marketing strategy</span>
+            <h4 className="text-lg font-black tracking-tight text-white leading-tight uppercase">
+              CMB EPSOM
             </h4>
-            <p className="text-[9px] text-neutral-400 font-mono uppercase tracking-wider">
-              No contracts. Peak performance.
+            <p className="text-[9px] text-neutral-300 font-light leading-relaxed">
+              Providing full online presence from scratch, driving local customer reviews and optimizing location-based search marketing.
             </p>
+            <div className="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
+              <span className="text-[9px] font-bold text-neutral-400 font-mono">Location Strategy</span>
+              <button className="px-2.5 py-1 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
+                LAUNCHED
+              </button>
+            </div>
           </div>
-
-          <div className="flex items-center justify-between pt-2 border-t border-neutral-900">
-            <span className="text-[8px] text-neutral-500 uppercase tracking-widest font-mono">Join Epsom Gym</span>
-            <button className="px-3 py-1 bg-lime-400 text-black text-[8px] font-black uppercase tracking-widest hover:bg-white transition-colors">
-              START TRIAL
-            </button>
+        </div>
+      )
+    },
+    {
+      id: "electricrich",
+      brand: "ELECTRICRICH",
+      tagline: "Professional Electrical Services",
+      actionText: "WHATSAPP CHAT",
+      category: "Local Service",
+      bgColor: "bg-neutral-900",
+      textColor: "text-white",
+      accentColor: "text-brand-green",
+      icon: Sparkles,
+      customDesign: (
+        <div className="w-full h-full flex flex-col justify-between bg-neutral-950 relative overflow-hidden font-sans border border-brand-green/20">
+          <div className="absolute inset-0 z-0">
+            <img src={electricRichHomeUrl} alt="ElectricRich" className="w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
+          </div>
+          <div className="relative z-10 p-5 flex justify-between items-center">
+            <span className="font-mono text-[10px] tracking-widest text-neutral-300 font-bold">ELECTRICRICH</span>
+            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Emergency Call-Outs</span>
+          </div>
+          <div className="relative z-10 p-5 mt-auto space-y-2">
+            <span className="font-mono text-[8px] text-brand-green tracking-widest uppercase block">Emergency Support & Brand Launch</span>
+            <h4 className="text-lg font-black tracking-tight text-white leading-tight uppercase">
+              ELECTRICRICH
+            </h4>
+            <p className="text-[9px] text-neutral-300 font-light leading-relaxed">
+              New brand identity and website for a local electrician with custom SEO localization and integrated WhatsApp instant emergency chat.
+            </p>
+            <div className="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
+              <span className="text-[9px] font-bold text-neutral-400 font-mono">Instant Support</span>
+              <button className="px-2.5 py-1 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
+                CHAT NOW
+              </button>
+            </div>
           </div>
         </div>
       )
