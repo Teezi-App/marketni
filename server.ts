@@ -27,6 +27,39 @@ async function sendEmail({
 
   console.log(`[Email Dispatch] Attempting to send email to ${to} with subject: "${subject}"`);
 
+  // --- SMTP Configuration (Primary Choice, e.g., Hostinger SMTP) ---
+  if (host && user && pass) {
+    console.log(`[Email Dispatch] Using configured SMTP Host: ${host} (Port: ${port})`);
+    try {
+      const transporter = nodemailer.createTransport({
+        host,
+        port,
+        secure: port === 465,
+        auth: {
+          user,
+          pass,
+        },
+        tls: {
+          // Bypasses SSL handshake hurdles common in serverless/container runtimes
+          rejectUnauthorized: false
+        }
+      });
+
+      const info = await transporter.sendMail({
+        from: fromEmail, // Clean raw sender address prevents "not owned by user" SMTP rejections
+        to,
+        replyTo,
+        subject,
+        html,
+      });
+
+      console.log(`[Email Dispatch Success] Message sent successfully via SMTP: ${info.messageId}`);
+      return { success: true, messageId: info.messageId };
+    } catch (err: any) {
+      console.error(`[Email Dispatch Error] SMTP dispatch failed, trying fallbacks if available:`, err);
+    }
+  }
+
   // --- HTTP API Fallback 1: RESEND (Runs over Port 443 - Fully compatible with Render Free tier) ---
   if (process.env.RESEND_API_KEY) {
     console.log(`[Email Dispatch] Found RESEND_API_KEY. Using Resend HTTPS REST API bypass...`);
@@ -55,7 +88,6 @@ async function sendEmail({
       }
     } catch (err: any) {
       console.error(`[Email Dispatch Error] Resend HTTP API dispatch failed:`, err);
-      return { success: false, error: `Resend API Error: ${err.message}` };
     }
   }
 
@@ -87,57 +119,25 @@ async function sendEmail({
       }
     } catch (err: any) {
       console.error(`[Email Dispatch Error] Brevo HTTP API dispatch failed:`, err);
-      return { success: false, error: `Brevo API Error: ${err.message}` };
     }
   }
 
-  if (!host || !user || !pass) {
-    console.warn(
-      `[Email Dispatch Warning] SMTP server not configured in environment variables!\n` +
-      `Please configure SMTP_HOST, SMTP_PORT, SMTP_USER, and SMTP_PASS in the AI Studio settings.\n` +
-      `----------------- SIMULATED OUTBOX MESSAGE -----------------\n` +
-      `To: ${to}\n` +
-      `Reply-To: ${replyTo || "N/A"}\n` +
-      `Subject: ${subject}\n` +
-      `Content:\n${html.replace(/<[^>]*>/g, " ").trim()}\n` +
-      `------------------------------------------------------------`
-    );
-    return {
-      success: false,
-      error: "SMTP credentials missing. Form data was logged to server log. Let the administrator know.",
-      simulated: true,
-    };
-  }
-
-  try {
-    const transporter = nodemailer.createTransport({
-      host,
-      port,
-      secure: port === 465,
-      auth: {
-        user,
-        pass,
-      },
-      tls: {
-        // Bypasses SSL handshake hurdles common in serverless/container runtimes
-        rejectUnauthorized: false
-      }
-    });
-
-    const info = await transporter.sendMail({
-      from: fromEmail, // Clean raw sender address prevents "not owned by user" SMTP rejections
-      to,
-      replyTo,
-      subject,
-      html,
-    });
-
-    console.log(`[Email Dispatch Success] Message sent successfully: ${info.messageId}`);
-    return { success: true, messageId: info.messageId };
-  } catch (err: any) {
-    console.error(`[Email Dispatch Error] Failed to send email via SMTP:`, err);
-    return { success: false, error: err.message || "Unknown SMTP error" };
-  }
+  // If we reach here, either everything failed or nothing was configured
+  console.warn(
+    `[Email Dispatch Warning] No active/working email method (SMTP or API fallbacks) succeeded!\n` +
+    `Please check your SMTP_HOST (${host || 'not set'}), SMTP_USER, and SMTP_PASS, or your BREVO/RESEND keys.\n` +
+    `----------------- SIMULATED OUTBOX MESSAGE -----------------\n` +
+    `To: ${to}\n` +
+    `Reply-To: ${replyTo || "N/A"}\n` +
+    `Subject: ${subject}\n` +
+    `Content:\n${html.replace(/<[^>]*>/g, " ").trim()}\n` +
+    `------------------------------------------------------------`
+  );
+  return {
+    success: false,
+    error: "No SMTP credentials or API keys configured, or all of them failed. Form logged to server.",
+    simulated: true,
+  };
 }
 
 async function startServer() {
