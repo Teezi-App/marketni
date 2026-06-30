@@ -11,6 +11,10 @@ import hanburyHomeUrl from "../assets/images/hanbury-home.jpg";
 import cmbHomeUrl from "../assets/images/cmb-home.jpg";
 // @ts-ignore
 import electricRichHomeUrl from "../assets/images/electric-rich-home.jpg";
+// @ts-ignore
+import aiSlopMarketingUrl from "../assets/images/ai-slop-marketing.jpg";
+// @ts-ignore
+import aiBusinessKillerUrl from "../assets/images/ai-business-killer.jpg";
 
 interface HeroProps {
   onScrollToSection: (sectionId: string) => void;
@@ -32,160 +36,85 @@ interface WebPreviewCard {
 export default function Hero({ onScrollToSection }: HeroProps) {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
 
-  // The 4 distinct client mockups matching the services tabs in exact order
+  // The client mockup images showing full-bleed custom designs (no overlaid mock UI text)
   const previewCards: WebPreviewCard[] = [
+    {
+      id: "ai-business-killer",
+      brand: "AI Business Killer",
+      tagline: "",
+      actionText: "",
+      category: "",
+      bgColor: "bg-neutral-900",
+      textColor: "text-white",
+      accentColor: "text-brand-green",
+      icon: Sparkles,
+      customDesign: (
+        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
+          <img src={aiBusinessKillerUrl} alt="AI Business Killer" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        </div>
+      )
+    },
     {
       id: "teezi",
       brand: "TEEZI GOLF",
-      tagline: "Bespoke Golf Connections Platform",
-      actionText: "EXPLORE COLLECTION",
-      category: "Bespoke E-Commerce",
+      tagline: "",
+      actionText: "",
+      category: "",
       bgColor: "bg-neutral-900",
       textColor: "text-white",
       accentColor: "text-brand-green",
       icon: ShoppingBag,
       customDesign: (
-        <div className="w-full h-full flex flex-col justify-between bg-neutral-950 relative overflow-hidden font-sans border border-brand-green/20">
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <img src={teeziGolfUrl} alt="Teezi Golf" className="w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
-          </div>
-          {/* Top bar */}
-          <div className="relative z-10 p-5 flex justify-between items-center">
-            <span className="font-mono text-[10px] tracking-widest text-neutral-300 font-bold">TEEZI.GOLF</span>
-            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Active</span>
-          </div>
-          {/* Bottom/Middle content */}
-          <div className="relative z-10 p-5 mt-auto space-y-2">
-            <span className="font-mono text-[8px] text-brand-green tracking-widest uppercase block">Bespoke Golf Connections</span>
-            <h4 className="text-lg font-black tracking-tight text-white leading-tight uppercase">
-              TEEZI GOLF PLATFORM
-            </h4>
-            <p className="text-[9px] text-neutral-300 font-light leading-relaxed">
-              A bespoke golf networking platform connecting users in real-time with Google Antigravity & payment gateways.
-            </p>
-            <div className="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
-              <span className="text-[9px] font-bold text-neutral-400 font-mono">500+ signups in 48h</span>
-              <button className="px-2.5 py-1 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
-                EXPLORE
-              </button>
-            </div>
-          </div>
+        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
+          <img src={teeziGolfUrl} alt="Teezi Golf" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
       )
     },
     {
       id: "hanbury",
       brand: "HANBURY AUTO'S",
-      tagline: "Automotive Heritage & Service",
-      actionText: "BOOK SLOT",
-      category: "Local Service",
+      tagline: "",
+      actionText: "",
+      category: "",
       bgColor: "bg-neutral-900",
       textColor: "text-white",
       accentColor: "text-brand-green",
       icon: Home,
       customDesign: (
-        <div className="w-full h-full flex flex-col justify-between bg-neutral-950 relative overflow-hidden font-sans border border-brand-green/20">
-          <div className="absolute inset-0 z-0">
-            <img src={hanburyHomeUrl} alt="Hanbury Autos" className="w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
-          </div>
-          <div className="relative z-10 p-5 flex justify-between items-center">
-            <span className="font-mono text-[10px] tracking-widest text-neutral-300 font-bold">HANBURY AUTOS</span>
-            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Heritage Focus</span>
-          </div>
-          <div className="relative z-10 p-5 mt-auto space-y-2">
-            <span className="font-mono text-[8px] text-brand-green tracking-widest uppercase block">Business focus & Modernised approach</span>
-            <h4 className="text-lg font-black tracking-tight text-white leading-tight uppercase">
-              HANBURY AUTO'S
-            </h4>
-            <p className="text-[9px] text-neutral-300 font-light leading-relaxed">
-              Bespoke re-design celebrating history, equipped with a custom database for slot booking and customer data management.
-            </p>
-            <div className="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
-              <span className="text-[9px] font-bold text-neutral-400 font-mono">Expanded Marketing</span>
-              <button className="px-2.5 py-1 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
-                BOOK SLOT
-              </button>
-            </div>
-          </div>
+        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
+          <img src={hanburyHomeUrl} alt="Hanbury Autos" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
       )
     },
     {
       id: "cmbepsom",
       brand: "CMB EPSOM",
-      tagline: "Local Services & Digitalization",
-      actionText: "VISIT SITE",
-      category: "Local Business",
+      tagline: "",
+      actionText: "",
+      category: "",
       bgColor: "bg-neutral-900",
       textColor: "text-white",
       accentColor: "text-brand-green",
       icon: Coffee,
       customDesign: (
-        <div className="w-full h-full flex flex-col justify-between bg-neutral-950 relative overflow-hidden font-sans border border-brand-green/20">
-          <div className="absolute inset-0 z-0">
-            <img src={cmbHomeUrl} alt="CMB Epsom" className="w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
-          </div>
-          <div className="relative z-10 p-5 flex justify-between items-center">
-            <span className="font-mono text-[10px] tracking-widest text-neutral-300 font-bold">CMB EPSOM</span>
-            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Go Digital</span>
-          </div>
-          <div className="relative z-10 p-5 mt-auto space-y-2">
-            <span className="font-mono text-[8px] text-brand-green tracking-widest uppercase block">Go digital pack + Marketing strategy</span>
-            <h4 className="text-lg font-black tracking-tight text-white leading-tight uppercase">
-              CMB EPSOM
-            </h4>
-            <p className="text-[9px] text-neutral-300 font-light leading-relaxed">
-              Providing full online presence from scratch, driving local customer reviews and optimizing location-based search marketing.
-            </p>
-            <div className="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
-              <span className="text-[9px] font-bold text-neutral-400 font-mono">Location Strategy</span>
-              <button className="px-2.5 py-1 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
-                LAUNCHED
-              </button>
-            </div>
-          </div>
+        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
+          <img src={cmbHomeUrl} alt="CMB Epsom" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
       )
     },
     {
       id: "electricrich",
       brand: "ELECTRICRICH",
-      tagline: "Professional Electrical Services",
-      actionText: "WHATSAPP CHAT",
-      category: "Local Service",
+      tagline: "",
+      actionText: "",
+      category: "",
       bgColor: "bg-neutral-900",
       textColor: "text-white",
       accentColor: "text-brand-green",
       icon: Sparkles,
       customDesign: (
-        <div className="w-full h-full flex flex-col justify-between bg-neutral-950 relative overflow-hidden font-sans border border-brand-green/20">
-          <div className="absolute inset-0 z-0">
-            <img src={electricRichHomeUrl} alt="ElectricRich" className="w-full h-full object-cover opacity-60" referrerPolicy="no-referrer" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/70" />
-          </div>
-          <div className="relative z-10 p-5 flex justify-between items-center">
-            <span className="font-mono text-[10px] tracking-widest text-neutral-300 font-bold">ELECTRICRICH</span>
-            <span className="text-[8px] uppercase font-mono text-brand-green bg-brand-green/10 px-1.5 py-0.5 border border-brand-green/20">Emergency Call-Outs</span>
-          </div>
-          <div className="relative z-10 p-5 mt-auto space-y-2">
-            <span className="font-mono text-[8px] text-brand-green tracking-widest uppercase block">Emergency Support & Brand Launch</span>
-            <h4 className="text-lg font-black tracking-tight text-white leading-tight uppercase">
-              ELECTRICRICH
-            </h4>
-            <p className="text-[9px] text-neutral-300 font-light leading-relaxed">
-              New brand identity and website for a local electrician with custom SEO localization and integrated WhatsApp instant emergency chat.
-            </p>
-            <div className="flex justify-between items-center pt-2 border-t border-white/10 mt-2">
-              <span className="text-[9px] font-bold text-neutral-400 font-mono">Instant Support</span>
-              <button className="px-2.5 py-1 bg-brand-green text-black text-[8px] font-black uppercase tracking-wider hover:bg-white transition-colors">
-                CHAT NOW
-              </button>
-            </div>
-          </div>
+        <div className="w-full h-full bg-neutral-950 relative overflow-hidden">
+          <img src={electricRichHomeUrl} alt="ElectricRich" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
       )
     }
@@ -202,6 +131,12 @@ export default function Hero({ onScrollToSection }: HeroProps) {
   return (
     <section id="hero" className="relative min-h-screen bg-[#121415] text-white overflow-hidden flex flex-col justify-between font-sans">
       
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none">
+        <img src={aiSlopMarketingUrl} alt="Background" className="w-full h-full object-cover opacity-65" referrerPolicy="no-referrer" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#121415]/15 via-[#121415]/60 to-[#121415]" />
+      </div>
+
       {/* Background Subtle Ambiance and Grid Lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
       <div className="absolute top-0 left-0 w-full h-1/2 bg-[linear-gradient(to_bottom,rgba(18,20,21,1),rgba(18,20,21,0))] pointer-events-none" />
@@ -383,13 +318,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
 
           </div>
 
-          {/* Comment / Subtext shown on bottom right of UI */}
-          <div className="text-right w-full max-w-[340px] mt-6 flex items-center justify-end space-x-2 text-neutral-500">
-            <span className="w-6 h-px bg-neutral-800" />
-            <span className="font-mono text-[9px] uppercase tracking-wider">
-              Different industries. Same websites. Zero differentiation.
-            </span>
-          </div>
+
 
         </div>
 

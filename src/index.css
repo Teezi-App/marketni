@@ -20,3 +20,7 @@
   --color-cyan-900: #0d3a33;
   --color-cyan-950: #051a17;
 }
+
+html, body {
+  background-color: #121415;
+}
