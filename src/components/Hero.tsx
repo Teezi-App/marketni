@@ -241,7 +241,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
             onClick={() => onScrollToSection("services")} 
             className="hover:text-brand-green transition-colors cursor-pointer"
           >
-            Work
+            Projects
           </button>
           <button 
             onClick={() => onScrollToSection("feeds")} 
