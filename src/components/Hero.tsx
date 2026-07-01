@@ -94,7 +94,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
     <section id="hero" className="relative min-h-screen bg-[#121415] text-white overflow-hidden flex flex-col justify-between font-sans">
       
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none">
+      <div className="absolute inset-x-0 top-0 h-[100vh] lg:h-full z-0 pointer-events-none select-none">
         <img src={aiSlopMarketingUrl} alt="Background" className="w-full h-full object-cover opacity-65" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#121415]/15 via-[#121415]/60 to-[#121415]" />
       </div>
