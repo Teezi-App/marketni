@@ -35,6 +35,7 @@ interface ClientCaseStudy {
   id: string;
   name: string;
   url: string;
+  href?: string;
   industry: string;
   location: string;
   metric: string;
@@ -83,6 +84,7 @@ export default function Services() {
       id: "hanbury",
       name: "HANBURY AUTO'S",
       url: "www.hanburyautos.co.uk",
+      href: "https://ais-pre-d4uwwm6sdnlpegncleok6f-750569669993.europe-west2.run.app",
       industry: "Automotive Heritage & Service",
       location: "Heritage pitch",
       metric: "Business focus & Modernised approach",
@@ -114,6 +116,7 @@ export default function Services() {
       id: "cmbepsom",
       name: "CMB EPSOM",
       url: "www.cmbepsom.co.uk",
+      href: "https://ais-pre-mor2slxj7juyk33rdas5sk-750569669993.europe-west2.run.app/",
       industry: "Local Services & Business Digitalization",
       location: "Epsom Surrey",
       metric: "Go digital pack + Marketing strategy",
@@ -250,7 +253,7 @@ export default function Services() {
                 <span>{currentStudy.location}</span>
                 <span className="text-brand-green font-bold">&bull;</span>
                 <a 
-                  href={`https://${currentStudy.url}`} 
+                  href={currentStudy.href || `https://${currentStudy.url}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-brand-green underline flex items-center space-x-1"
