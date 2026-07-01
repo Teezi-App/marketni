@@ -37,25 +37,25 @@ export default function Hero({ onScrollToSection }: HeroProps) {
         <div className="hidden md:flex items-center space-x-10 font-mono text-[11px] tracking-widest text-neutral-400 uppercase font-bold">
           <button 
             onClick={() => onScrollToSection("about")} 
-            className="hover:text-[#9237fd] transition-colors cursor-pointer"
+            className="hover:text-brand-green transition-colors cursor-pointer"
           >
             About
           </button>
           <button 
             onClick={() => onScrollToSection("approach")} 
-            className="hover:text-[#9237fd] transition-colors cursor-pointer"
+            className="hover:text-brand-green transition-colors cursor-pointer"
           >
             Approach
           </button>
           <button 
             onClick={() => onScrollToSection("services")} 
-            className="hover:text-[#9237fd] transition-colors cursor-pointer"
+            className="hover:text-brand-green transition-colors cursor-pointer"
           >
             Projects
           </button>
           <button 
             onClick={() => onScrollToSection("feeds")} 
-            className="hover:text-[#9237fd] transition-colors cursor-pointer"
+            className="hover:text-brand-green transition-colors cursor-pointer"
           >
             Insights
           </button>
