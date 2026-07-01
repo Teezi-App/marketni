@@ -188,8 +188,8 @@ export default function ContactForm() {
                   <Phone className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="block text-[9px] text-neutral-450 uppercase tracking-widest font-bold">Consulting Hotline</span>
-                  <span className="text-neutral-800 font-bold">+44 (0) 7985 182 951</span>
+                  <span className="block text-[9px] text-neutral-450 uppercase tracking-widest font-bold">WHATSAPP HOTLINE</span>
+                  <a href="tel:+447985182951" className="text-neutral-800 hover:text-black transition font-bold">+44 (0) 7985 182 951</a>
                 </div>
               </div>
 

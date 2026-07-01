@@ -117,7 +117,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               Get 3 Instant Campaigns &rarr;
             </button>
             <button
-              onClick={() => onScrollToSection("about")}
+              onClick={() => onScrollToSection("approach")}
               className="px-8 py-4 bg-neutral-950 hover:bg-neutral-900 text-white font-mono text-xs font-bold tracking-widest transition-all duration-200 cursor-pointer text-center uppercase shadow-sm"
             >
               Discover Approach
@@ -173,7 +173,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
         className="relative z-10 w-full py-4 border-t border-neutral-900/10 bg-white/30 text-center flex items-center justify-center space-x-2 text-neutral-500 hover:text-cyan-700 cursor-pointer group transition-colors"
       >
         <span className="font-mono text-[10px] tracking-widest uppercase font-bold">
-          See How We Disrupt the Status Quo
+          Discover your true potential
         </span>
       </div>
     </section>
