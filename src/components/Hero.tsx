@@ -3,7 +3,7 @@ import { Sparkles } from "lucide-react";
 // @ts-ignore
 import aiRobotUrl from "../assets/images/ai-robot.png";
 // @ts-ignore
-import marketniLogoUrl from "../assets/images/Marketni-logo.png";
+import marketniLogoUrl from "../assets/images/marketni-logo.gif";
 
 interface HeroProps {
   onScrollToSection: (sectionId: string) => void;
