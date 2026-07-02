@@ -29,6 +29,9 @@ export default function App() {
   return (
     <div className="bg-[#050505] min-h-screen text-neutral-100 selection:bg-brand-green selection:text-black">
       
+      {/* Free Website Redesign Floating Widget */}
+      <WebsiteRedesignFloatingWidget />
+
       {/* 1. Header & Hero Bio Profile Section */}
       <Hero onScrollToSection={handleScrollToSection} />
 
@@ -160,9 +163,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-
-      {/* Free Website Redesign Floating Widget */}
-      <WebsiteRedesignFloatingWidget />
 
     </div>
   );
