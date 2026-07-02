@@ -130,14 +130,15 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
               <div className="font-mono text-xs text-neutral-800 uppercase font-black tracking-widest block">
                 What I Do
               </div>
-              <h3 className="text-3xl md:text-5xl font-black tracking-tight text-neutral-950 font-display leading-none">
-                STRATEGY FIRST.<br />
-                EVERYTHING ELSE FOLLOWS.
+              <h3 className="text-3xl md:text-5xl font-black tracking-tight font-display leading-[1.35] md:leading-[1.35] text-neutral-950">
+                <span className="bg-brand-green text-black px-2 py-0.5 md:px-3 md:py-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone] inline">STRATEGY FIRST.</span>
+                <br />
+                <span className="bg-brand-green text-black px-2 py-0.5 md:px-3 md:py-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone] inline">EVERYTHING ELSE FOLLOWS.</span>
               </h3>
             </div>
             
             <div className="lg:col-span-6 text-neutral-600 font-light text-base md:text-lg leading-relaxed pt-2">
-              Websites, apps and marketing mean nothing without the right foundation. I start with your business, then build what actually moves it forward. No generic templated execution.
+              Websites, apps and marketing is useless without the right foundation. I start with your business, then build what actually moves the needle. No guess work, just facts.
             </div>
           </div>
 
