@@ -152,7 +152,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto border-t border-white/5 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-neutral-600 text-[8px] tracking-widest">
           <div className="flex items-center space-x-1">
             <Award className="w-3 h-3 text-neutral-700" />
-            <span>&copy; {new Date().getFullYear()} MARKETNI. ALL RIGHTS RESERVED. REGISTERED UK CONSULTANCY.</span>
+            <span>&copy; {new Date().getFullYear()} MARKETNI. ALL RIGHTS RESERVED.</span>
           </div>
           <div>
             <span>DIGITAL PRODUCTS & REGIONAL STRATEGY FOR SURREY.</span>
