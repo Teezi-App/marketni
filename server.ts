@@ -191,6 +191,43 @@ async function startServer() {
     });
   });
 
+  // Website Redesign Concept Request API route
+  app.post("/api/redesign-request", async (req, res) => {
+    const { firstName, businessName, websiteUrl, contactInfo } = req.body;
+
+    if (!firstName || !businessName || !websiteUrl || !contactInfo) {
+      return res.status(400).json({ error: "All fields are required." });
+    }
+
+    const receiverEmail = process.env.EMAIL_RECEIVER || "mwalker@marketni.co";
+
+    const emailHtml = `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eaeaea; border-radius: 5px;">
+        <h2 style="color: #06b6d4; border-bottom: 2px solid #eaeaea; padding-bottom: 10px;">New Free Website Redesign Request</h2>
+        <p>A visitor has requested a free website redesign concept.</p>
+        <p><strong>First Name:</strong> ${firstName}</p>
+        <p><strong>Business Name:</strong> ${businessName}</p>
+        <p><strong>Website URL:</strong> <a href="${websiteUrl.startsWith('http') ? websiteUrl : 'http://' + websiteUrl}" target="_blank">${websiteUrl}</a></p>
+        <p><strong>Phone or Email:</strong> ${contactInfo}</p>
+        <hr style="border: 0; border-top: 1px solid #eaeaea; margin: 20px 0;" />
+        <p style="font-size: 11px; color: #a3a3a3;">Sent via Marketni system proxy at ${new Date().toLocaleString()}</p>
+      </div>
+    `;
+
+    const result = await sendEmail({
+      to: receiverEmail,
+      subject: `[Redesign Request] ${businessName} - ${firstName}`,
+      html: emailHtml,
+      replyTo: contactInfo.includes("@") ? contactInfo : undefined,
+    });
+
+    return res.json({
+      success: true,
+      message: "We will send you the website revamp within the next 48hrs.",
+      details: result
+    });
+  });
+
   // Martin's Instant AI Local Marketing Strategy Auditor
   app.post("/api/audit", async (req, res) => {
     const { businessName, industrySpace, localArea, targetAudience } = req.body;

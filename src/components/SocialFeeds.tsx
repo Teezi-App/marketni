@@ -144,19 +144,19 @@ export default function SocialFeeds() {
               </div>
 
               <div className="space-y-1">
-                <h3 className="text-lg font-bold tracking-tight text-white font-display">WHATSAPP CONSULT</h3>
+                <h3 className="text-lg font-bold tracking-tight text-white font-display">WHATSAPP RE-FRESH</h3>
                 <p className="text-xs text-neutral-400 font-light leading-relaxed">
-                  Send me your URL or postcode blocker directly. I reply with quick voice memos and raw, practical advice.
+                  Send me your website URL for a free website re-fresh design and business opportunities direction.
                 </p>
               </div>
 
               {/* Mini visual mockup item */}
               <div className="bg-neutral-950 border border-white/5 p-3 rounded space-y-1 font-mono text-[9px] text-neutral-500 select-none">
                 <div className="flex justify-between text-[8px] text-neutral-400">
-                  <span>AVERAGE RESPONSE TIME</span>
-                  <span className="text-emerald-400 font-bold">&lt; 30 MINS</span>
+                  <span>GUARANTEED DELIVERY</span>
+                  <span className="text-emerald-400 font-bold">&lt; 48 HOURS</span>
                 </div>
-                <p className="text-neutral-300 line-clamp-2">"Send me your address, I'll pull up the map pack geocode..."</p>
+                <p className="text-neutral-300 line-clamp-2">"We will send you the website revamp within the next 48hrs."</p>
               </div>
             </div>
 

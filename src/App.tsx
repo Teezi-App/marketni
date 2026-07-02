@@ -6,6 +6,7 @@ import InteractiveAuditer from "./components/InteractiveAuditer";
 import Testimonials from "./components/Testimonials";
 import SocialFeeds from "./components/SocialFeeds";
 import ContactForm from "./components/ContactForm";
+import WebsiteRedesignFloatingWidget from "./components/WebsiteRedesignFloatingWidget";
 import { ArrowUp, Award, Mail, Instagram, ArrowUpRight } from "lucide-react";
 // @ts-ignore
 import martinPortraitUrl from "./assets/images/Martin-walker-Marketni.png";
@@ -159,6 +160,9 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Free Website Redesign Floating Widget */}
+      <WebsiteRedesignFloatingWidget />
 
     </div>
   );
