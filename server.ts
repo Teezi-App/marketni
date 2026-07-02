@@ -220,23 +220,36 @@ async function startServer() {
       html: auditHtml
     }).catch(e => console.error("Headless campaign notification email failed:", e));
 
+    const isB2B = targetAudience.toLowerCase().includes("business") || 
+                  targetAudience.toLowerCase().includes("b2b") || 
+                  targetAudience.toLowerCase().includes("company") || 
+                  targetAudience.toLowerCase().includes("corporate") || 
+                  targetAudience.toLowerCase().includes("professional") ||
+                  targetAudience.toLowerCase().includes("client") ||
+                  industrySpace.toLowerCase().includes("b2b");
+
+    const fallbackKeywords2Word = [`${localArea} ${industrySpace}`, `best ${industrySpace}`];
+    const fallbackKeywords3Word = [`best ${industrySpace} ${localArea}`, `${industrySpace} near me`, `${industrySpace} in ${localArea}`];
+
     const fallbackResponse = {
-      campaignTitle: `Local Market Domination Strategy for ${businessName}`,
+      campaignTitle: `The ${localArea} Local Domination Playbook for ${businessName}`,
       steps: [
         {
-          title: "Phase 1: Saturate Local Search & Mapping Real Estate",
-          detail: `Lock down localized keywords matching "${industrySpace} in ${localArea}". Optimize structures so that when the custom demographic (${targetAudience}) searches local terms, your business is the immediate default solution. Setup interactive citations and custom schema.`
+          title: "Campaign Phase 01: High-Intent SEO & Searchable Headlines",
+          detail: `First, capture high-intent local searches. Target these highly searchable 2-word keywords: "${fallbackKeywords2Word.join(", ")}" and 3-word keywords: "${fallbackKeywords3Word.join(", ")}". Implement these exact search-friendly phrases directly into your website's main headlines (H1/H2 tags, e.g., "The Premier ${industrySpace} in ${localArea}"). Furthermore, utilize these exact searchable terms in your social media post and video titles (like YouTube, Facebook, or Instagram video titles) so they index directly in Google and Bing search results.`
         },
         {
-          title: "Phase 2: Tailored Community & Visual Storytelling",
-          detail: `Abandon standard boring corporate posts. Create video and photographic narratives speaking directly to the unique cultural values of ${targetAudience} in ${localArea}. Feature local faces, community partnerships, and real utility.`
+          title: "Campaign Phase 02: Twice-Weekly Storytelling & Organic Video",
+          detail: `Create a disciplined organic video series going out exactly twice per week (no more and no less, to maintain top quality and keep the audience highly engaged without fatigue). Focus heavily on "behind-the-scenes" video footage to build deep, authentic trust with ${targetAudience} based on your unique process. Since you operate locally, integrate User Generated Content (UGC) if applicable, encouraging customers to share their genuine reactions. Replicate the high-performing social media formats of successful regional competitors, and partner with complementary local business owners or local chain networks in ${localArea} for collaborative cross-promotions.`
         },
         {
-          title: "Phase 3: Automated Conversational Lead Capture",
-          detail: `Implement frictionless conversational landing structures, giving local prospects a direct, personalized incentive (e.g., local vouchers, video audit) in exchange for their contact details, then build a automated, highly personable SMS/email nurture chain.`
+          title: "Campaign Phase 03: Sector-Specific Acquisition & Retention",
+          detail: isB2B 
+            ? `Classified Sector: B2B. Drive client acquisition by leveraging joint ventures with complementary local businesses and highly targeted LinkedIn networking tailored precisely to ${targetAudience}. For long-term client retention, implement structured monthly progress reports, VIP business-owner roundtable events, and regular ROI review cycles that continually prove your business value.`
+            : `Classified Sector: B2C. Drive customer acquisition using highly targeted local lead magnets and collaborative local events. For long-term customer retention, implement an interactive mobile loyalty program, personalized milestone rewards, and a high-touch, personable automated local follow-up flow.`
         }
       ],
-      quote: `Forget mass marketing. If you want to build a truly bulletproof local brand in ${localArea}, you must speak to your audience as key distinct neighbors. Customization and trust outperform pure ad budgets every single time.`
+      quote: `In local marketing, clarity, direction, and authenticity outperform massive advertising budgets. By optimizing for specific searchable keywords, storytelling through twice-weekly behind-the-scenes video, and executing a laser-focused ${isB2B ? "B2B" : "B2C"} acquisition/retention strategy, ${businessName} will stand out as the definitive local choice in ${localArea}.`
     };
 
     if (!process.env.GEMINI_API_KEY) {
@@ -263,21 +276,44 @@ async function startServer() {
 - Target Customer Demographic: ${targetAudience}
 
 Generate a hyper-creative, high-impact, 3-phase bespoke marketing campaign strategy designed to help them immediately stand out and dominate their local market.
+
+You MUST tailor each phase of the response according to the following strict guidelines:
+
+1. **For 'Campaign Phase 01' (SEO & Headlines Focus)**:
+   - Perform a highly specific local search analysis. Generate and list real 2-word and 3-word search keywords that combine their industry/space ("${industrySpace}") and local area ("${localArea}") (e.g., if it's a pizza shop in Epsom, keywords like "Epsom pizza" or "best pizza Epsom").
+   - Explicitly detail how to integrate these high-intent local SEO keywords into their website's main headlines (H1/H2 tags) for high-ranking search indexing.
+   - Explain how to use these exact keywords in their social media video titles, description lines, or profile tags to ensure they are searchable and indexable by search engines (Google/Bing).
+
+2. **For 'Campaign Phase 02' (Community & Storytelling Focus)**:
+   - Focus heavily on organic video content creation. Specify a disciplined publication frequency of exactly twice per week (no more and no less, to avoid viewer burnout while maintaining top quality).
+   - Detail concepts for "behind-the-scenes" video segments tailored specifically to "${industrySpace}" and target customer inputs ("${targetAudience}").
+   - Integrate User Generated Content (UGC) ideas that fit their business type.
+   - Advise them to research successful national/regional competitors outside their area, identify their highest-performing post styles, and replicate/adapt those formats.
+   - Suggest specific local businesses, complementary services, or local chain partners in ${localArea} that they can collaborate with for co-promoted campaigns.
+
+3. **For 'Campaign Phase 03' (Acquisition & Retention Focus)**:
+   - Address the business's industry model directly. First, clearly classify whether "${industrySpace}" / "${targetAudience}" is a B2B (Business-to-Business) or B2C (Business-to-Consumer) setup.
+   - Provide distinct, separate, actionable strategy sections for:
+     a) Acquisition (attracting new clients/customers)
+     b) Retention (keeping them coming back)
+   - Ensure the distinction between B2B and B2C is highly evident in the strategy. (E.g., if B2B, focus on local partnerships, LinkedIn networking, case studies, or ongoing advisory agreements. If B2C, focus on loyalty incentives, interactive community campaigns, or high-touch follow-up).
+   - Evolve the advice to be dynamic, fresh, and deeply contextualized rather than using generic marketing buzzwords.
+
 Provide a high-quality JSON response matching the exact structure below:
 {
   "campaignTitle": "A catchy, custom headline for the local campaign",
   "steps": [
     {
-      "title": "Phase 1 Title (e.g., Hyper-Local Mapping, Community Launch)",
-      "detail": "Specific actionable marketing playbook steps, brief and confident style."
+      "title": "Campaign Phase 01: High-Intent SEO & Searchable Headlines",
+      "detail": "Actionable local SEO keyword lists, website headline integration, and search-optimized social media titles. Be highly specific and write in a confident, professional style."
     },
     {
-      "title": "Phase 2 Title",
-      "detail": "Specific actionable marketing playbook steps, brief and confident style."
+      "title": "Campaign Phase 02: Twice-Weekly Storytelling & Organic Video",
+      "detail": "Actionable video content playbook focusing on behind-the-scenes, UGC, competitor research replication, and local collaborations. Be specific to their business, and write in a confident style."
     },
     {
-      "title": "Phase 3 Title",
-      "detail": "Specific actionable playbook steps, brief and confident style."
+      "title": "Campaign Phase 03: Sector-Specific Acquisition & Retention",
+      "detail": "Deep dive into B2B/B2C classification and specific action plans for customer attraction and long-term retention. Try to evolve the advice to be highly customized and dynamic."
     }
   ],
   "quote": "A powerful quote tailored directly to their sector and town in Martin Walker's visionary, confident style"
