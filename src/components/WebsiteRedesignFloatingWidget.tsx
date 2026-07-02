@@ -173,7 +173,7 @@ export default function WebsiteRedesignFloatingWidget() {
                       <span>Complimentary Homepage Revamp</span>
                     </div>
                     <h2 className="text-xl md:text-2xl font-black text-white leading-snug font-display tracking-tight uppercase">
-                      Fantastic! We'll review your current details below and produce a free homepage redesign concept for you
+                      Fantastic! I'll review your details below and send your free homepage redesign within 48hrs
                     </h2>
                     <p className="text-xs text-neutral-400 font-light leading-relaxed">
                       Please supply accurate details so Martin can thoroughly evaluate your digital layout, search positioning, and business conversion opportunities.
@@ -186,7 +186,7 @@ export default function WebsiteRedesignFloatingWidget() {
                       {/* First Name Input */}
                       <div className="space-y-1">
                         <label htmlFor="first-name" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-400">
-                          First Name
+                          First Name <span className="text-brand-green font-black">*</span>
                         </label>
                         <input
                           type="text"
@@ -202,7 +202,7 @@ export default function WebsiteRedesignFloatingWidget() {
                       {/* Business Name Input */}
                       <div className="space-y-1">
                         <label htmlFor="business-name" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-400">
-                          Business Name
+                          Business Name <span className="text-brand-green font-black">*</span>
                         </label>
                         <input
                           type="text"
@@ -220,7 +220,7 @@ export default function WebsiteRedesignFloatingWidget() {
                       {/* Website URL Input */}
                       <div className="space-y-1">
                         <label htmlFor="website-url" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-400">
-                          Website URL
+                          Website URL <span className="text-brand-green font-black">*</span>
                         </label>
                         <input
                           type="text"
@@ -236,7 +236,7 @@ export default function WebsiteRedesignFloatingWidget() {
                       {/* Phone or Email Input */}
                       <div className="space-y-1">
                         <label htmlFor="contact-info" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-400">
-                          Phone or Email
+                          Phone or Email <span className="text-brand-green font-black">*</span>
                         </label>
                         <input
                           type="text"
