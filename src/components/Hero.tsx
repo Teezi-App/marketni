@@ -120,7 +120,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               onClick={() => onScrollToSection("approach")}
               className="px-8 py-4 bg-neutral-950 hover:bg-neutral-900 text-white font-mono text-xs font-bold tracking-widest transition-all duration-200 cursor-pointer text-center uppercase shadow-sm"
             >
-              Discover Approach
+              Discover My Approach
             </button>
           </div>
 

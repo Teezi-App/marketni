@@ -16,7 +16,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
       <div className="max-w-7xl mx-auto space-y-32">
         
         {/* =======================================================
-            SECTION 1: I HELP BUSINESSES DISCOVER THEMSELVES
+            SECTION 1: I HELP BUSINESSES DISCOVER THEIR POTENTIAL
             ======================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
@@ -30,7 +30,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
             </div>
  
             <h2 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-none text-neutral-950 font-display">
-              I HELP BUSINESSES TO DISCOVER <span className="text-neutral-950 relative inline-block border-b-4 border-brand-green">THEMSELVES.</span>
+              I HELP BUSINESSES DISCOVER THEIR <span className="text-neutral-950 relative inline-block border-b-4 border-brand-green">POTENTIAL.</span>
             </h2>
 
             <div className="space-y-4 text-neutral-700 leading-relaxed font-light text-base md:text-lg">
@@ -120,7 +120,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
         </div>
 
         {/* =======================================================
-            SECTION 2: STRATEGY FIRST. EVERYTHING ELSE FOLLOWS.
+            SECTION 2: BASICS FIRST. EVERYTHING ELSE FOLLOWS.
             ======================================================= */}
         <div id="approach" className="space-y-16 pt-12 border-t border-neutral-200">
           
@@ -131,7 +131,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
                 What I Do
               </div>
               <h3 className="text-3xl md:text-5xl font-black tracking-tight font-display leading-[1.35] md:leading-[1.35] text-neutral-950">
-                <span className="bg-brand-green text-black px-2 py-0.5 md:px-3 md:py-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone] inline">STRATEGY FIRST.</span>
+                <span className="bg-brand-green text-black px-2 py-0.5 md:px-3 md:py-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone] inline">BASICS FIRST.</span>
                 <br />
                 <span className="bg-brand-green text-black px-2 py-0.5 md:px-3 md:py-1 [box-decoration-break:clone] [-webkit-box-decoration-break:clone] inline">EVERYTHING ELSE FOLLOWS.</span>
               </h3>
