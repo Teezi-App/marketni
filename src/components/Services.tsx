@@ -39,6 +39,7 @@ interface ClientCaseStudy {
   industry: string;
   location: string;
   metric: string;
+  metricLabel?: string;
   solution: string;
   slides: CarouselSlide[];
   bullets?: string[];
@@ -56,6 +57,7 @@ export default function Services() {
       industry: "Premium Golf Apparel & Branding",
       location: "Epsom & Surrey Golf Corridor",
       metric: "Startup Launch: 500+ signups In 48h",
+      metricLabel: "SUCCESS KPI",
       solution: "Teezi golf is a bespoke golf networking platform that connects users in real-time. Built using Google Antigravity with payment gateways, It was successfully launched In March and on budget.",
       slides: [
         {
@@ -87,7 +89,8 @@ export default function Services() {
       href: "https://ais-pre-d4uwwm6sdnlpegncleok6f-750569669993.europe-west2.run.app",
       industry: "Automotive Heritage & Service",
       location: "Heritage pitch",
-      metric: "Business focus & Modernised approach",
+      metric: "FAMILY RUN HERITAGE",
+      metricLabel: "IDENTIFIED USP",
       solution: "Hanbury Auto's website re-design and build focuses on celebrating the company's rich heritage, which was previously completely missing. We built a custom slot booking database and streamlined customer information flows to elevate brand identity and expand local marketing activities.",
       slides: [
         {
@@ -119,7 +122,8 @@ export default function Services() {
       href: "https://ais-pre-mor2slxj7juyk33rdas5sk-750569669993.europe-west2.run.app/",
       industry: "Local Services & Business Digitalization",
       location: "Epsom Surrey",
-      metric: "Go digital pack + Marketing strategy",
+      metric: "LOCATION, LOCATION, LOCATION",
+      metricLabel: "IDENTIFIED USP",
       solution: "CMB had no online presence. We supported them with our new Go Digital Pack designed for small businesses. By focusing on customer reviews and their strategic physical location, we created an effective and modern search footprint.",
       slides: [
         {
@@ -150,7 +154,8 @@ export default function Services() {
       url: "www.electricrich.co.uk",
       industry: "Professional Electrical Services",
       location: "Surrey & Epsom",
-      metric: "Emergency Support & Brand Launch",
+      metric: "1 HOUR EMERGENCY CALLOUT",
+      metricLabel: "IDENTIFIED USP",
       solution: "We created a new brand identity and website for ElectricRich, establishing a powerful digital presence. By highlighting their emergency call-out services and integrating instant WhatsApp chat functionality, we built a direct, high-converting channel for local customers.",
       slides: [
         {
@@ -268,7 +273,7 @@ export default function Services() {
             <div className="bg-neutral-950 border-l-4 border-brand-green p-6 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-24 h-24 bg-brand-green/5 rounded-full blur-xl pointer-events-none" />
               <span className="font-mono text-[9px] text-neutral-500 uppercase tracking-widest block font-bold">
-                Verified Outcome
+                {currentStudy.metricLabel || "Verified Outcome"}
               </span>
               <span className="text-2xl md:text-3xl font-black text-brand-green tracking-tight font-display uppercase block mt-1">
                 {currentStudy.metric}

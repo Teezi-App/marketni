@@ -91,14 +91,14 @@ export default function Hero({ onScrollToSection }: HeroProps) {
             <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight text-neutral-950 leading-none font-display uppercase">
               AI CAN MAKE IT <br />
               LOOK GREAT. <br />
-              NOT MAKE IT <br />
+              NOT MAKE YOU <br />
               <span className="text-[#9237fd]">DIFFERENT.</span>
             </h1>
           </div>
 
           <div className="space-y-6 max-w-xl">
             <p className="text-base md:text-lg text-neutral-800 font-sans font-light leading-relaxed">
-              Templates. Prompts. Platforms. Different industries. Same websites. No direction. No positioning. No growth.
+              Different industries. Same looking designs. No direction. No positioning. Zero growth.
             </p>
             
             <div className="pt-2">

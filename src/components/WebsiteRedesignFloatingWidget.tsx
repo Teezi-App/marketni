@@ -106,7 +106,7 @@ export default function WebsiteRedesignFloatingWidget() {
               {/* Core Text */}
               <div className="space-y-1 pr-6">
                 <h4 className="text-xs font-mono font-black text-brand-green tracking-widest uppercase">
-                  VISION PROTOTYPE
+                  BUSINESS SUPPORT
                 </h4>
                 <p className="text-sm font-bold text-white tracking-tight leading-tight">
                   Want To See What Your Website Could Become?
