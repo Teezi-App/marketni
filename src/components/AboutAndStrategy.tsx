@@ -22,8 +22,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
           
           {/* Left Block: Bio and heading */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center space-x-2 border border-neutral-300 bg-neutral-100 px-3 py-1 rounded-full">
-              <span className="w-1.5 h-1.5 bg-brand-green rounded-full animate-pulse" />
+            <div className="inline-flex items-center border border-neutral-300 bg-neutral-100 px-3 py-1 rounded-full">
               <span className="font-mono text-[10px] text-neutral-900 uppercase font-black tracking-widest">
                 I'm Martin Walker
               </span>
@@ -68,7 +67,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
                 {/* Minimal Overlay Label */}
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-2 border border-neutral-200">
                   <span className="font-mono text-[9px] text-neutral-850 font-black tracking-wider block">
-                    MARTIN WALKER &bull; EPSOM
+                    MARKETNI BY MARTIN WALKER
                   </span>
                 </div>
               </div>
@@ -138,7 +137,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
             </div>
             
             <div className="lg:col-span-6 text-neutral-600 font-light text-base md:text-lg leading-relaxed pt-2">
-              Websites, apps and marketing is useless without the right foundation. I start with your business, then build what actually moves the needle. No guess work, just facts.
+              Successful marketing doesn't start with a website. It starts with understanding the business behind it. No guesswork. Just evidence.
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Sparkles } from "lucide-react";
 // @ts-ignore
-import aiRobotUrl from "../assets/images/ai-robot.png";
+import heroImageUrl from "../assets/images/marketni-hero-image.png";
 // @ts-ignore
 import marketniLogoUrl from "../assets/images/marketni-logo.gif";
 
@@ -28,7 +28,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
               MARKETNI
             </span>
             <span className="font-mono text-[9px] text-brand-green tracking-wider mt-0.5 font-bold uppercase">
-              By Martin Walker
+              DIGITAL MARKETING EPSOM
             </span>
           </div>
         </div>
@@ -82,28 +82,26 @@ export default function Hero({ onScrollToSection }: HeroProps) {
           
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="w-2 h-2 bg-cyan-600 rounded-full animate-pulse" />
               <span className="font-mono text-xs text-cyan-800 font-black uppercase tracking-widest block">
-                Every business. Same story.
+                Anyone can build a website.
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight text-neutral-950 leading-none font-display uppercase">
-              AI CAN MAKE IT <br />
-              LOOK GREAT. <br />
-              NOT MAKE YOU <br />
-              <span className="text-[#9237fd]">DIFFERENT.</span>
+              VERY FEW, LOOK AT <br />
+              YOUR BUSINESS <br />
+              <span className="text-[#9237fd]">POSITIONING.</span>
             </h1>
           </div>
 
           <div className="space-y-6 max-w-xl">
             <p className="text-base md:text-lg text-neutral-800 font-sans font-light leading-relaxed">
-              Different industries. Same looking designs. No direction. No positioning. Zero growth.
+              I uncover what makes your business different, define why customers should choose you, then build everything around that.
             </p>
             
             <div className="pt-2">
               <span className="font-script text-[#9237fd] text-4xl font-bold inline-block transform -rotate-3 select-none pl-1">
-                That's where I come in.
+                One call changes everything
               </span>
             </div>
           </div>
@@ -126,43 +124,21 @@ export default function Hero({ onScrollToSection }: HeroProps) {
 
         </div>
 
-        {/* Right Column: High-Fidelity Floating AI Robot PNG */}
+        {/* Right Column: Hero Image */}
         <div className="lg:col-span-6 flex flex-col items-center justify-center relative w-full">
-          
           <motion.div
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            animate={{ 
-              opacity: 1, 
-              y: [0, -15, 0],
-              scale: 1
-            }}
-            transition={{
-              duration: 0.8,
-              y: {
-                repeat: Infinity,
-                duration: 5,
-                ease: "easeInOut"
-              }
-            }}
-            className="w-full max-w-sm md:max-w-md aspect-[4/5] relative flex items-center justify-center py-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="w-full max-w-lg md:max-w-xl lg:max-w-2xl relative flex items-center justify-center py-6"
           >
-            <div className="relative w-full h-full max-w-[340px] max-h-[420px] overflow-hidden rounded-2xl flex items-center justify-center p-4">
-              {/* Soft ambient radial glow matching the theme */}
-              <div className="absolute inset-0 bg-cyan-300/20 blur-[60px] rounded-full" />
-              
-              <img 
-                src={aiRobotUrl} 
-                alt="AI Robot" 
-                className="w-full h-full object-contain relative z-10 filter drop-shadow-[0_20px_50px_rgba(0,180,210,0.15)]" 
-                referrerPolicy="no-referrer" 
-              />
-            </div>
-            
-            {/* Elegant high-tech background framing borders */}
-            <div className="absolute inset-0 border border-neutral-900/5 rounded-3xl -z-10 pointer-events-none" />
-            <div className="absolute -inset-4 border border-dashed border-neutral-900/5 rounded-[2rem] -z-10 pointer-events-none animate-[spin_120s_linear_infinite]" />
+            <img 
+              src={heroImageUrl} 
+              alt="Marketni Hero" 
+              className="w-full h-auto object-contain relative z-10" 
+              referrerPolicy="no-referrer" 
+            />
           </motion.div>
-
         </div>
 
       </div>
