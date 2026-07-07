@@ -100,12 +100,12 @@ export default function Services() {
       solution: "Its all about supporting local clinics for chiropodist & podiatry. We develop high-performance digital systems that help local foot health practitioners connect with patients, showcase treatments, and handle online slot bookings seamlessly.",
       slides: [
         {
-          image: chiropodistPodiatryUrl,
-          subheading: "Go Digital: Its all about supporting local clinics for chiropodist & podiatry."
-        },
-        {
           image: podiatristClinicUrl,
           subheading: "Elegant, clean layouts built for modern podiatrist and chiropodist clinics."
+        },
+        {
+          image: chiropodistPodiatryUrl,
+          subheading: "Go Digital: Its all about supporting local clinics for chiropodist & podiatry."
         },
         {
           image: podiatryWebsiteUrl,
