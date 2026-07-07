@@ -25,6 +25,12 @@ import electricRichHomeUrl from "../assets/images/electric-rich-home.jpg";
 import richServicesUrl from "../assets/images/rich-services.jpg";
 // @ts-ignore
 import emergencyUrl from "../assets/images/emergency.jpg";
+// @ts-ignore
+import chiropodistPodiatryUrl from "../assets/images/chiropodist-podiatry-website.png";
+// @ts-ignore
+import podiatristClinicUrl from "../assets/images/  podiatrist-clinic-website.png";
+// @ts-ignore
+import podiatryWebsiteUrl from "../assets/images/podiatry-website.png";
 
 interface CarouselSlide {
   image: string;
@@ -80,6 +86,39 @@ export default function Services() {
         "Data-base and real-time capture",
         "CRM, Analytic tracking all touch-points",
         "Social media Integrations"
+      ]
+    },
+    {
+      id: "podiatry",
+      name: "PODIATRY",
+      url: "GO DIGITAL",
+      href: "https://ais-pre-gxrph6tnnmahi3sxwwnqwk-750569669993.europe-west2.run.app/",
+      industry: "Chiropodist & Podiatry Clinics",
+      location: "Local Clinics Support",
+      metric: "GO DIGITAL LOCAL CAMPAIGN",
+      metricLabel: "OUR MISSION",
+      solution: "Its all about supporting local clinics for chiropodist & podiatry. We develop high-performance digital systems that help local foot health practitioners connect with patients, showcase treatments, and handle online slot bookings seamlessly.",
+      slides: [
+        {
+          image: chiropodistPodiatryUrl,
+          subheading: "Go Digital: Its all about supporting local clinics for chiropodist & podiatry."
+        },
+        {
+          image: podiatristClinicUrl,
+          subheading: "Elegant, clean layouts built for modern podiatrist and chiropodist clinics."
+        },
+        {
+          image: podiatryWebsiteUrl,
+          subheading: "Creating localized visibility and patient acquisition funnels for foot healthcare."
+        }
+      ],
+      bullets: [
+        "Go Digital clinic blueprint",
+        "Targeted local SEO footprint",
+        "Appointment inquiry channels",
+        "Mobile-first responsive presentation",
+        "Services & treatments catalogue",
+        "Ongoing security & design guidance"
       ]
     },
     {
@@ -213,7 +252,7 @@ export default function Services() {
               <span>[01 // Pure Evidence Over Theory]</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight font-display">
-              CLIENT CASE STUDIES & <span className="text-neutral-500">RESULTS.</span>
+              COMMUNITY SUPPORT & <span className="text-neutral-500">CLIENTS</span>
             </h2>
           </div>
           <div className="font-mono text-xs max-w-md text-neutral-400 uppercase tracking-wider leading-relaxed">
