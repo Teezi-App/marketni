@@ -92,7 +92,7 @@ export default function Services() {
       id: "podiatry",
       name: "PODIATRY",
       url: "GO DIGITAL",
-      href: "https://ais-pre-gxrph6tnnmahi3sxwwnqwk-750569669993.europe-west2.run.app/",
+      href: "https://ais-dev-v5pcdof7faeryeflpe5uuk-750569669993.europe-west2.run.app/",
       industry: "Chiropodist & Podiatry Clinics",
       location: "Local Clinics Support",
       metric: "GO DIGITAL LOCAL CAMPAIGN",
