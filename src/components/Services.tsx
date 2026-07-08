@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ExternalLink, CheckCircle, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 // @ts-ignore
@@ -31,6 +31,22 @@ import chiropodistPodiatryUrl from "../assets/images/chiropodist-podiatry-websit
 import podiatristClinicUrl from "../assets/images/  podiatrist-clinic-website.png";
 // @ts-ignore
 import podiatryWebsiteUrl from "../assets/images/podiatry-website.png";
+// @ts-ignore
+import dashboardClinicWebsite1Url from "../assets/images/dashboard-clinic-website-1.png";
+// @ts-ignore
+import dashboardClinicWebsite2Url from "../assets/images/dashboard-clinic-website-2.png";
+// @ts-ignore
+import dashboardClinicWebsite3Url from "../assets/images/dashboard-clinic-website-3.png";
+// @ts-ignore
+import dashboardClinicWebsite4Url from "../assets/images/dashboard-clinic-website-4.png";
+// @ts-ignore
+import clinicWebsiteEpsom1Url from "../assets/images/clinic-website-epsom-1.png";
+// @ts-ignore
+import clinicWebsiteEpsom2Url from "../assets/images/clinic-website-epsom-2.png";
+// @ts-ignore
+import clinicWebsiteEpsom3Url from "../assets/images/clinic-website-epsom-3.png";
+// @ts-ignore
+import clinicWebsiteEpsom4Url from "../assets/images/clinic-website-epsom-4.png";
 
 interface CarouselSlide {
   image: string;
@@ -40,8 +56,9 @@ interface CarouselSlide {
 interface ClientCaseStudy {
   id: string;
   name: string;
-  url: string;
+  url?: string;
   href?: string;
+  links?: { label: string; href: string }[];
   industry: string;
   location: string;
   metric: string;
@@ -91,13 +108,16 @@ export default function Services() {
     {
       id: "podiatry",
       name: "PODIATRY",
-      url: "GO DIGITAL",
-      href: "https://ais-dev-v5pcdof7faeryeflpe5uuk-750569669993.europe-west2.run.app/",
+      links: [
+        { label: "EXAMPLE 1", href: "https://ais-pre-v5pcdof7faeryeflpe5uuk-750569669993.europe-west2.run.app/" },
+        { label: "EXAMPLE 2", href: "https://ais-pre-gxrph6tnnmahi3sxwwnqwk-750569669993.europe-west2.run.app/" },
+        { label: "EXAMPLE 3", href: "https://ais-pre-p4s2pcp4phsaczy4culygd-750569669993.europe-west2.run.app/" }
+      ],
       industry: "Chiropodist & Podiatry Clinics",
       location: "Local Clinics Support",
-      metric: "GO DIGITAL LOCAL CAMPAIGN",
-      metricLabel: "OUR MISSION",
-      solution: "Its all about supporting local clinics for chiropodist & podiatry. We develop high-performance digital systems that help local foot health practitioners connect with patients, showcase treatments, and handle online slot bookings seamlessly.",
+      metric: "GO DIGITAL COMMUNITY SUPPORT",
+      metricLabel: "GO DIGITAL SUPPORT",
+      solution: "We're on a community mission to help local clinics and practices strengthen their digital presence, attract more patients, and fill empty appointment slots through modern, affordable digital solutions.",
       slides: [
         {
           image: podiatristClinicUrl,
@@ -110,6 +130,38 @@ export default function Services() {
         {
           image: podiatryWebsiteUrl,
           subheading: "Creating localized visibility and patient acquisition funnels for foot healthcare."
+        },
+        {
+          image: dashboardClinicWebsite1Url,
+          subheading: "Interactive management dashboard for healthcare and clinic operations."
+        },
+        {
+          image: dashboardClinicWebsite2Url,
+          subheading: "Streamlined scheduler and real-time patient appointments view."
+        },
+        {
+          image: dashboardClinicWebsite3Url,
+          subheading: "Patient health files, medical history, and clinical documentation."
+        },
+        {
+          image: dashboardClinicWebsite4Url,
+          subheading: "Clinic business analytics, billing summary, and performance reports."
+        },
+        {
+          image: clinicWebsiteEpsom1Url,
+          subheading: "Epsom Clinic - Professional practice presentation and location visibility."
+        },
+        {
+          image: clinicWebsiteEpsom2Url,
+          subheading: "Epsom Clinic - Dynamic patient booking calendar and scheduler."
+        },
+        {
+          image: clinicWebsiteEpsom3Url,
+          subheading: "Epsom Clinic - Treatment detail pages and service showcases."
+        },
+        {
+          image: clinicWebsiteEpsom4Url,
+          subheading: "Epsom Clinic - Administrative reporting and patient contact gateway."
         }
       ],
       bullets: [
@@ -292,19 +344,40 @@ export default function Services() {
                 {currentStudy.name}
               </h3>
               
-              <div className="flex items-center space-x-2 text-xs font-mono text-neutral-400">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 text-xs font-mono text-neutral-400">
                 <span className="text-brand-green font-bold">&bull;</span>
                 <span>{currentStudy.location}</span>
-                <span className="text-brand-green font-bold">&bull;</span>
-                <a 
-                  href={currentStudy.href || `https://${currentStudy.url}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="hover:text-brand-green underline flex items-center space-x-1"
-                >
-                  <span>{currentStudy.url}</span>
-                  <ExternalLink className="w-3 h-3 inline" />
-                </a>
+                {currentStudy.links && currentStudy.links.length > 0 ? (
+                  currentStudy.links.map((link, idx) => (
+                    <Fragment key={idx}>
+                      <span className="text-brand-green font-bold">&bull;</span>
+                      <a 
+                        href={link.href} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="hover:text-brand-green underline flex items-center space-x-1"
+                      >
+                        <span>{link.label}</span>
+                        <ExternalLink className="w-3 h-3 inline" />
+                      </a>
+                    </Fragment>
+                  ))
+                ) : (
+                  currentStudy.url && (
+                    <>
+                      <span className="text-brand-green font-bold">&bull;</span>
+                      <a 
+                        href={currentStudy.href || `https://${currentStudy.url}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="hover:text-brand-green underline flex items-center space-x-1"
+                      >
+                        <span>{currentStudy.url}</span>
+                        <ExternalLink className="w-3 h-3 inline" />
+                      </a>
+                    </>
+                  )
+                )}
               </div>
             </div>
 
@@ -366,19 +439,18 @@ export default function Services() {
             {/* Carousel Frame Container */}
             <div className="w-full border border-white/10 rounded-md bg-neutral-950 shadow-2xl relative overflow-hidden group">
               
-              {/* Dynamic image rendering with slide animation */}
-              <AnimatePresence mode="wait">
+              {/* Dynamic image rendering with stable CSS cross-fade */}
+              <div className="relative w-full h-auto">
                 {currentStudy.slides.map((slide, idx) => {
-                  if (idx !== activeSlideIndex) return null;
-
+                  const isActive = idx === activeSlideIndex;
                   return (
-                    <motion.div
+                    <div
                       key={idx}
-                      initial={{ opacity: 0, x: 40 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -40 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="w-full h-auto flex items-center justify-center bg-neutral-950"
+                      className={`w-full h-auto transition-all duration-300 ease-in-out ${
+                        isActive
+                          ? "relative opacity-100 z-10 scale-100"
+                          : "absolute inset-0 opacity-0 z-0 pointer-events-none scale-95"
+                      } flex items-center justify-center bg-neutral-950`}
                     >
                       <img
                         src={slide.image}
@@ -388,10 +460,10 @@ export default function Services() {
                       />
                       {/* Dark gradient overlay at the bottom for readability */}
                       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black via-black/70 to-transparent pointer-events-none" />
-                    </motion.div>
+                    </div>
                   );
                 })}
-              </AnimatePresence>
+              </div>
 
               {/* Decorative side reflection overlay */}
               <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white/5 to-transparent pointer-events-none transform skew-x-12" />
