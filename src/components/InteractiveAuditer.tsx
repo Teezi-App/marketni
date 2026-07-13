@@ -105,7 +105,7 @@ export default function InteractiveAuditer() {
         <div className="text-center space-y-4">
           <div className="inline-flex items-center space-x-1 bg-neutral-950 border border-neutral-900 px-3 py-1 text-brand-green text-xs font-mono font-bold tracking-widest uppercase shadow-md">
             <Cpu className="w-3.5 h-3.5 animate-spin" />
-            <span>Telemetry Module [V2.55]</span>
+            <span>Marketni Module [V2.55]</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-none font-display text-neutral-950 uppercase">
             INSTANT LOCAL <span className="text-black">CAMPAIGNS.</span>
