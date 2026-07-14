@@ -82,7 +82,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
           
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="font-mono text-xs text-cyan-800 font-black uppercase tracking-widest block">
+              <span className="font-mono text-sm text-cyan-800 font-black uppercase tracking-widest block">
                 Anyone can build a website.
               </span>
             </div>
