@@ -172,34 +172,34 @@ export default function ContactForm() {
               </p>
             </div>
 
-            <div className="space-y-4 font-mono text-xs">
+            <div className="space-y-4 font-mono">
               <div className="flex items-center space-x-4 bg-white p-4 border border-neutral-200 rounded shadow-sm">
-                <div className="p-2.5 bg-neutral-950 border border-neutral-900 text-brand-green rounded-sm">
-                  <Mail className="w-4 h-4" />
+                <div className="p-3 bg-neutral-950 border border-neutral-900 text-brand-green rounded-sm">
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-[9px] text-neutral-450 uppercase tracking-widest font-bold">Personal Email</span>
-                  <a href="mailto:mwalker@marketni.co" className="text-neutral-800 hover:text-black transition font-bold">mwalker@marketni.co</a>
+                  <span className="block text-[11px] md:text-xs text-neutral-450 uppercase tracking-widest font-bold">Email Martin</span>
+                  <a href="mailto:mwalker@marketni.co" className="text-sm md:text-base text-neutral-800 hover:text-black transition font-bold">mwalker@marketni.co</a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4 bg-white p-4 border border-neutral-200 rounded shadow-sm">
-                <div className="p-2.5 bg-neutral-950 border border-neutral-900 text-brand-green rounded-sm">
-                  <Phone className="w-4 h-4" />
+                <div className="p-3 bg-neutral-950 border border-neutral-900 text-brand-green rounded-sm">
+                  <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-[9px] text-neutral-450 uppercase tracking-widest font-bold">WHATSAPP HOTLINE</span>
-                  <a href="tel:+447985182951" className="text-neutral-800 hover:text-black transition font-bold">+44 (0) 7985 182 951</a>
+                  <span className="block text-[11px] md:text-xs text-neutral-450 uppercase tracking-widest font-bold">WHATSAPP HOTLINE</span>
+                  <a href="tel:+447985182951" className="text-sm md:text-base text-neutral-800 hover:text-black transition font-bold">+44 (0) 7985 182 951</a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4 bg-white p-4 border border-neutral-200 rounded shadow-sm">
-                <div className="p-2.5 bg-neutral-950 border border-neutral-900 text-brand-green rounded-sm">
-                  <MapPin className="w-4 h-4" />
+                <div className="p-3 bg-neutral-950 border border-neutral-900 text-brand-green rounded-sm">
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-[9px] text-neutral-450 uppercase tracking-widest font-bold">Primary Office Address</span>
-                  <span className="text-neutral-800 font-bold">Ashley House, Epsom, KT18 5AB</span>
+                  <span className="block text-[11px] md:text-xs text-neutral-450 uppercase tracking-widest font-bold">Location</span>
+                  <span className="text-sm md:text-base text-neutral-800 font-bold">Ashley House, Epsom, KT18 5AB</span>
                 </div>
               </div>
             </div>
@@ -253,13 +253,13 @@ export default function ContactForm() {
                     exit={{ opacity: 0 }}
                   >
                     <span className="font-mono text-[10px] text-neutral-450 uppercase tracking-widest block border-b border-neutral-250 pb-2 font-bold">
-                      [Direct Channel Encrypted]
+                      [Business Support Enquiry]
                     </span>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       {/* Name */}
                       <div className="space-y-1.5">
-                        <label className="block font-mono text-[10px] text-black font-extrabold uppercase tracking-wider">Name *</label>
+                        <label className="block font-mono text-[12px] text-black font-extrabold uppercase tracking-wider">Name *</label>
                         <div className="relative">
                           <input
                             type="text"
@@ -275,7 +275,7 @@ export default function ContactForm() {
 
                       {/* Business Name */}
                       <div className="space-y-1.5">
-                        <label className="block font-mono text-[10px] text-black font-extrabold uppercase tracking-wider">Business Name</label>
+                        <label className="block font-mono text-[12px] text-black font-extrabold uppercase tracking-wider">Business Name</label>
                         <div className="relative">
                           <input
                             type="text"
@@ -290,7 +290,7 @@ export default function ContactForm() {
 
                       {/* Email */}
                       <div className="space-y-1.5">
-                        <label className="block font-mono text-[10px] text-black font-extrabold uppercase tracking-wider">Email Address *</label>
+                        <label className="block font-mono text-[12px] text-black font-extrabold uppercase tracking-wider">Email Address *</label>
                         <div className="relative">
                           <input
                             type="email"
@@ -306,7 +306,7 @@ export default function ContactForm() {
 
                       {/* Phone */}
                       <div className="space-y-1.5">
-                        <label className="block font-mono text-[10px] text-black font-extrabold uppercase tracking-wider">Phone number Code</label>
+                        <label className="block font-mono text-[12px] text-black font-extrabold uppercase tracking-wider">Phone number Code</label>
                         <div className="relative">
                           <input
                             type="text"
@@ -322,7 +322,7 @@ export default function ContactForm() {
 
                     {/* Topic toggle Chips */}
                     <div className="space-y-2">
-                      <label className="block font-mono text-[10px] text-black font-extrabold uppercase tracking-wider">Select Engagement trigger</label>
+                      <label className="block font-mono text-[12px] text-black font-extrabold uppercase tracking-wider">Select Engagement trigger</label>
                       <div className="flex flex-wrap gap-2">
                         {topics.map((top) => (
                           <button
@@ -343,7 +343,7 @@ export default function ContactForm() {
 
                     {/* Message Box */}
                     <div className="space-y-1.5">
-                      <label className="block font-mono text-[10px] text-black font-extrabold uppercase tracking-wider">Brief Message / Local Targets *</label>
+                      <label className="block font-mono text-[12px] text-black font-extrabold uppercase tracking-wider">Brief Message / Local Targets *</label>
                       <textarea
                         required
                         rows={4}

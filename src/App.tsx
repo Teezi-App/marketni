@@ -62,7 +62,7 @@ export default function App() {
           
           {/* Left Text Column */}
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-brand-green font-mono text-[10px] tracking-[0.25em] font-black uppercase block">
+            <span className="text-brand-green font-mono text-[12px] tracking-[0.25em] font-black uppercase block">
               BEFORE YOU SPEND ANOTHER POUND...
             </span>
             <h2 className="text-4xl md:text-6xl font-black text-white font-display tracking-tight leading-none uppercase">
@@ -109,18 +109,18 @@ export default function App() {
       </div>
 
       {/* Elegant Black Footer Bar */}
-      <footer className="bg-black border-t border-white/10 py-10 px-6 md:px-12 text-neutral-500 font-mono text-[10px] tracking-wider uppercase">
+      <footer className="bg-black border-t border-white/10 py-10 px-6 md:px-12 text-neutral-500 font-mono text-[12px] tracking-wider uppercase">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           
           {/* Left side: branding credit */}
           <div className="flex items-center space-x-2 text-white font-black">
             <span>MARKETNI</span>
             <span className="text-neutral-600">|</span>
-            <span className="text-neutral-400 font-normal text-[9px] tracking-widest">BY MARTIN WALKER</span>
+            <span className="text-neutral-400 font-normal text-[11px] tracking-widest">BY MARTIN WALKER</span>
           </div>
 
           {/* Middle side: location footprint */}
-          <div className="text-neutral-400 flex items-center space-x-3 text-[9px] font-bold">
+          <div className="text-neutral-400 flex items-center space-x-3 text-[11px] font-bold">
             <span>LONDON</span>
             <span>&bull;</span>
             <span>UK</span>
@@ -153,9 +153,9 @@ export default function App() {
         </div>
 
         {/* Small copyright footnotes */}
-        <div className="max-w-7xl mx-auto border-t border-white/5 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-neutral-600 text-[8px] tracking-widest">
+        <div className="max-w-7xl mx-auto border-t border-white/5 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-neutral-400 text-[10px] tracking-widest">
           <div className="flex items-center space-x-1">
-            <Award className="w-3 h-3 text-neutral-700" />
+            <Award className="w-3.5 h-3.5 text-neutral-400" />
             <span>&copy; {new Date().getFullYear()} MARKETNI. ALL RIGHTS RESERVED.</span>
           </div>
           <div>
