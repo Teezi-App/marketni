@@ -219,7 +219,7 @@ export default function SocialFeeds() {
                       />
                       <button
                         type="submit"
-                        className="bg-brand-green hover:bg-white text-black px-2 py-1 text-[10px] font-mono font-black rounded-sm cursor-pointer"
+                        className="bg-brand-green hover:bg-white text-black px-2 py-1 text-sm font-mono font-black rounded-sm cursor-pointer"
                       >
                         JOIN
                       </button>
@@ -236,7 +236,7 @@ export default function SocialFeeds() {
                   const contactSec = document.getElementById("contact");
                   contactSec?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="w-full py-2.5 bg-neutral-950 hover:bg-brand-green hover:text-black border border-white/10 hover:border-brand-green text-neutral-300 font-mono text-xs font-bold tracking-widest transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer"
+                className="w-full py-2.5 bg-neutral-950 hover:bg-brand-green hover:text-black border border-white/10 hover:border-brand-green text-neutral-300 font-mono text-sm font-bold tracking-widest transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer"
               >
                 <span>GET THE BLUEPRINTS</span>
                 <ArrowRight className="w-3.5 h-3.5" />

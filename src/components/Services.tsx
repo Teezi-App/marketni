@@ -77,7 +77,7 @@ export default function Services() {
       id: "teezi",
       name: "TEEZI GOLF",
       url: "www.teezi.golf",
-      industry: "Premium Golf Apparel & Branding",
+      industry: "Startup Golf Brand UK",
       location: "Epsom & Surrey Golf Corridor",
       metric: "Startup Launch: 500+ signups In 48h",
       metricLabel: "SUCCESS KPI",
@@ -109,15 +109,15 @@ export default function Services() {
       id: "podiatry",
       name: "PODIATRY",
       links: [
-        { label: "EXAMPLE 1", href: "https://ais-pre-v5pcdof7faeryeflpe5uuk-750569669993.europe-west2.run.app/" },
-        { label: "EXAMPLE 2", href: "https://ais-pre-gxrph6tnnmahi3sxwwnqwk-750569669993.europe-west2.run.app/" },
-        { label: "EXAMPLE 3", href: "https://ais-pre-p4s2pcp4phsaczy4culygd-750569669993.europe-west2.run.app/" }
+        { label: "Demo 1", href: "https://ais-pre-v5pcdof7faeryeflpe5uuk-750569669993.europe-west2.run.app/" },
+        { label: "Demo 2", href: "https://ais-pre-gxrph6tnnmahi3sxwwnqwk-750569669993.europe-west2.run.app/" },
+        { label: "Demo 3", href: "https://ais-pre-p4s2pcp4phsaczy4culygd-750569669993.europe-west2.run.app/" }
       ],
       industry: "Chiropodist & Podiatry Clinics",
-      location: "Local Clinics Support",
+      location: "Clinic Platforms",
       metric: "GO DIGITAL COMMUNITY SUPPORT",
       metricLabel: "GO DIGITAL SUPPORT",
-      solution: "We're on a community mission to help local clinics and practices strengthen their digital presence, attract more patients, and fill empty appointment slots through modern, affordable digital solutions.",
+      solution: "We're on a community mission to help local clinics and practices strengthen their digital presence, attract more patients, and fill empty appointment slots through modern, affordable digital solutions at cost price. Limited to 25 Clinics.",
       slides: [
         {
           image: podiatristClinicUrl,
@@ -165,12 +165,12 @@ export default function Services() {
         }
       ],
       bullets: [
-        "Go Digital clinic blueprint",
+        "Go Digital Custom Platform",
         "Targeted local SEO footprint",
-        "Appointment inquiry channels",
-        "Mobile-first responsive presentation",
-        "Services & treatments catalogue",
-        "Ongoing security & design guidance"
+        "Daily Appointment & Booking",
+        "Fully responsive website, all devices",
+        "All service & treatment pages Included",
+        "1 year hosting Included"
       ]
     },
     {
@@ -301,13 +301,13 @@ export default function Services() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-white/10 pb-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2 font-mono text-xs text-brand-green font-bold uppercase tracking-widest">
-              <span>[01 // Pure Evidence Over Theory]</span>
+              <span>[01 // Digital Marketing Projects]</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight font-display">
-              COMMUNITY SUPPORT & <span className="text-neutral-500">CLIENTS</span>
+              COMMUNITY & <span className="text-neutral-500">CLIENTS</span>
             </h2>
           </div>
-          <div className="font-mono text-xs max-w-md text-neutral-400 uppercase tracking-wider leading-relaxed">
+          <div className="font-sans font-light text-base md:text-lg text-neutral-400 max-w-md leading-relaxed">
             I don't create generic off the shelf products. I build custom, high-converting digital products with the latest code that can be scaled into any digital format, including apps.
           </div>
         </div>
@@ -318,7 +318,7 @@ export default function Services() {
             <button
               key={study.id}
               onClick={() => handleCaseStudyChange(study.id)}
-              className={`px-5 py-3 font-mono text-xs tracking-widest uppercase transition-all duration-300 border rounded-none cursor-pointer ${
+              className={`px-5 py-3 font-mono text-sm tracking-widest uppercase transition-all duration-300 border rounded-none cursor-pointer ${
                 activeCaseStudy === study.id
                   ? "bg-brand-green text-black border-brand-green font-black"
                   : "bg-neutral-950 text-neutral-400 border-white/10 hover:text-white hover:border-white/20"
@@ -344,7 +344,7 @@ export default function Services() {
                 {currentStudy.name}
               </h3>
               
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 text-xs font-mono text-neutral-400">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 text-base font-mono text-neutral-200">
                 <span className="text-brand-green font-bold">&bull;</span>
                 <span>{currentStudy.location}</span>
                 {currentStudy.links && currentStudy.links.length > 0 ? (
@@ -384,7 +384,7 @@ export default function Services() {
             {/* Impact Metric Hero Card */}
             <div className="bg-neutral-950 border-l-4 border-brand-green p-6 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-24 h-24 bg-brand-green/5 rounded-full blur-xl pointer-events-none" />
-              <span className="font-mono text-[9px] text-neutral-500 uppercase tracking-widest block font-bold">
+              <span className="font-mono text-xs sm:text-sm text-neutral-400 uppercase tracking-widest block font-bold">
                 {currentStudy.metricLabel || "Verified Outcome"}
               </span>
               <span className="text-2xl md:text-3xl font-black text-brand-green tracking-tight font-display uppercase block mt-1">
@@ -400,10 +400,10 @@ export default function Services() {
 
               {/* Tighter, streamlined context details */}
               <div className="mt-6 pt-6 border-t border-white/5 space-y-3">
-                <h5 className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest font-black">
+                <h5 className="font-sans text-xs sm:text-sm font-bold text-neutral-400 uppercase tracking-wider">
                   Product Development Includes:
                 </h5>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono text-neutral-400">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm font-sans text-neutral-300">
                   {(currentStudy.bullets || [
                     "Swiss UI/UX Design",
                     "Google Antigravity Setup",
@@ -412,9 +412,9 @@ export default function Services() {
                     "Zero-Waste Serverless Infra",
                     "Continuous Secure Delivery"
                   ]).map((bullet, index) => (
-                    <li key={index} className="flex items-center space-x-2">
-                      <span className="text-brand-green font-bold">&bull;</span>
-                      <span>{bullet}</span>
+                    <li key={index} className="flex items-start space-x-2">
+                      <span className="text-brand-green font-bold text-base leading-none select-none">&bull;</span>
+                      <span className="leading-tight">{bullet}</span>
                     </li>
                   ))}
                 </ul>

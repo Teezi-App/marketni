@@ -266,7 +266,7 @@ export default function WebsiteRedesignFloatingWidget() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full mt-4 bg-brand-green hover:bg-white text-black font-mono font-black text-xs tracking-widest uppercase py-4 rounded-sm transition duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                      className="w-full mt-4 bg-brand-green hover:bg-white text-black font-mono font-black text-sm tracking-widest uppercase py-4 rounded-sm transition duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                       id="btn-redesign-submit"
                     >
                       {isSubmitting ? (
@@ -312,7 +312,7 @@ export default function WebsiteRedesignFloatingWidget() {
                   <div className="pt-4">
                     <button
                       onClick={handleCloseModal}
-                      className="px-6 py-3 border border-white/15 hover:border-brand-green text-neutral-400 hover:text-white font-mono text-xs tracking-wider uppercase rounded-sm transition duration-200 cursor-pointer"
+                      className="px-6 py-3 border border-white/15 hover:border-brand-green text-neutral-400 hover:text-white font-mono text-sm tracking-wider uppercase rounded-sm transition duration-200 cursor-pointer"
                       id="btn-success-close"
                     >
                       CLOSE WINDOW

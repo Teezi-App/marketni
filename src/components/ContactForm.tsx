@@ -238,7 +238,7 @@ export default function ContactForm() {
                     )}
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="px-6 py-2.5 bg-neutral-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider cursor-pointer font-sans rounded"
+                      className="px-6 py-2.5 bg-neutral-900 hover:bg-black text-white text-sm font-bold uppercase tracking-wider cursor-pointer font-sans rounded"
                     >
                       SEND ANOTHER DIRECT MESSAGE
                     </button>
@@ -329,7 +329,7 @@ export default function ContactForm() {
                             type="button"
                             key={top}
                             onClick={() => setTopic(top)}
-                            className={`px-3 py-1.5 border font-mono text-[10px] tracking-wider uppercase transition-all whitespace-nowrap cursor-pointer ${
+                            className={`px-3 py-1.5 border font-mono text-sm tracking-wider uppercase transition-all whitespace-nowrap cursor-pointer ${
                               topic === top
                                 ? "bg-brand-green text-black border-brand-green font-bold"
                                 : "bg-neutral-50 text-neutral-600 border-neutral-300 hover:text-black hover:border-neutral-900"
@@ -357,7 +357,7 @@ export default function ContactForm() {
                     <button
                       type="submit"
                       disabled={isSending}
-                      className="w-full py-4 bg-brand-green hover:bg-neutral-900 hover:text-white disabled:bg-neutral-150 disabled:text-neutral-400 disabled:cursor-not-allowed text-black font-mono text-xs font-black tracking-widest transition duration-200 cursor-pointer flex items-center justify-center space-x-2 rounded-sm"
+                      className="w-full py-4 bg-brand-green hover:bg-neutral-900 hover:text-white disabled:bg-neutral-150 disabled:text-neutral-400 disabled:cursor-not-allowed text-black font-mono text-sm font-black tracking-widest transition duration-200 cursor-pointer flex items-center justify-center space-x-2 rounded-sm"
                     >
                       {isSending ? (
                         <>

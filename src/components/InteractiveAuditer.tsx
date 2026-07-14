@@ -225,7 +225,7 @@ export default function InteractiveAuditer() {
                   <div className="pt-4">
                     <button
                       type="submit"
-                      className="w-full py-4 bg-brand-green hover:bg-white text-black font-mono text-xs font-black tracking-widest transition-all duration-200 cursor-pointer flex items-center justify-center space-x-2 animate-pulse"
+                      className="w-full py-4 bg-brand-green hover:bg-white text-black font-mono text-sm font-black tracking-widest transition-all duration-200 cursor-pointer flex items-center justify-center space-x-2 animate-pulse"
                     >
                       <Sparkles className="w-4 h-4 text-black" />
                       <span>RUN CAMPAIGN ENGINE &rarr;</span>
@@ -296,7 +296,7 @@ export default function InteractiveAuditer() {
                   </p>
                   <button
                     onClick={handleReset}
-                    className="px-6 py-2.5 bg-[#050505] border border-white/10 hover:border-white text-white font-mono text-xs font-bold uppercase tracking-wider cursor-pointer"
+                    className="px-6 py-2.5 bg-[#050505] border border-white/10 hover:border-white text-white font-mono text-sm font-bold uppercase tracking-wider cursor-pointer"
                   >
                     Reset &amp; Try Again
                   </button>
@@ -326,7 +326,7 @@ export default function InteractiveAuditer() {
                     <div className="flex items-center space-x-2">
                       <button
                         onClick={handlePrint}
-                        className="p-2 sm:px-3 sm:py-1.5 bg-neutral-950 border border-white/10 hover:border-white text-neutral-400 hover:text-white font-mono text-xs flex items-center space-x-1.5 transition duration-200 cursor-pointer"
+                        className="p-2 sm:px-3 sm:py-1.5 bg-neutral-950 border border-white/10 hover:border-white text-neutral-400 hover:text-white font-mono text-sm flex items-center space-x-1.5 transition duration-200 cursor-pointer"
                         title="Print PDF Strategy"
                       >
                         <Printer className="w-3.5 h-3.5" />
@@ -334,7 +334,7 @@ export default function InteractiveAuditer() {
                       </button>
                       <button
                         onClick={handleReset}
-                        className="p-2 sm:px-3 sm:py-1.5 bg-neutral-950 border border-white/10 hover:border-white text-brand-green hover:text-white font-mono text-xs flex items-center space-x-1.5 transition duration-200 cursor-pointer"
+                        className="p-2 sm:px-3 sm:py-1.5 bg-neutral-950 border border-white/10 hover:border-white text-brand-green hover:text-white font-mono text-sm flex items-center space-x-1.5 transition duration-200 cursor-pointer"
                       >
                         <RotateCcw className="w-3.5 h-3.5" />
                         <span className="hidden sm:inline">New Audit</span>
@@ -394,7 +394,7 @@ export default function InteractiveAuditer() {
                     
                     <a
                       href="#contact"
-                      className="px-5 py-2.5 bg-brand-green text-black hover:bg-white transition duration-200 font-mono text-xs font-black text-center tracking-widest shrink-0"
+                      className="px-5 py-2.5 bg-brand-green text-black hover:bg-white transition duration-200 font-mono text-sm font-black text-center tracking-widest shrink-0"
                     >
                       ENGAGE THE PLAYBOOK &rarr;
                     </a>

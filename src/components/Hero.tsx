@@ -34,7 +34,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
         </div>
 
         {/* Center menu navigation links */}
-        <div className="hidden md:flex items-center space-x-10 font-mono text-[11px] tracking-widest text-neutral-400 uppercase font-bold">
+        <div className="hidden md:flex items-center space-x-10 font-mono text-sm tracking-widest text-neutral-400 uppercase font-bold">
           <button 
             onClick={() => onScrollToSection("about")} 
             className="hover:text-brand-green transition-colors cursor-pointer"
@@ -65,7 +65,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
         <div>
           <button
             onClick={() => onScrollToSection("contact")}
-            className="font-mono text-[10px] font-bold border border-white/20 text-white hover:border-brand-green hover:text-brand-green transition-all duration-300 px-5 py-2 rounded-none tracking-widest cursor-pointer uppercase"
+            className="font-mono text-sm font-bold border border-white/20 text-white hover:border-brand-green hover:text-brand-green transition-all duration-300 px-5 py-2 rounded-none tracking-widest cursor-pointer uppercase"
           >
             Let's Talk
           </button>
@@ -110,13 +110,13 @@ export default function Hero({ onScrollToSection }: HeroProps) {
           <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center pt-4">
             <button
               onClick={() => onScrollToSection("strategy")}
-              className="px-8 py-4 bg-[#6fffe9] text-black font-mono text-xs font-black tracking-widest hover:bg-neutral-950 hover:text-white transition-all duration-200 cursor-pointer text-center uppercase shadow-sm"
+              className="px-8 py-4 bg-[#6fffe9] text-black font-mono text-sm font-black tracking-widest hover:bg-neutral-950 hover:text-white transition-all duration-200 cursor-pointer text-center uppercase shadow-sm"
             >
               Get 3 Instant Campaigns &rarr;
             </button>
             <button
               onClick={() => onScrollToSection("approach")}
-              className="px-8 py-4 bg-neutral-950 hover:bg-neutral-900 text-white font-mono text-xs font-bold tracking-widest transition-all duration-200 cursor-pointer text-center uppercase shadow-sm"
+              className="px-8 py-4 bg-neutral-950 hover:bg-neutral-900 text-white font-mono text-sm font-bold tracking-widest transition-all duration-200 cursor-pointer text-center uppercase shadow-sm"
             >
               Discover My Approach
             </button>

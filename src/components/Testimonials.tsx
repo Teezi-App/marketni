@@ -9,47 +9,57 @@ export default function Testimonials() {
   const testimonialsList: TestimonialType[] = [
     {
       id: "t1",
-      clientName: "Claire Jennings",
-      businessName: "Craft & Sew Boutique",
-      location: "Harrogate",
-      reviewMessage: "Martin completely overhauled our organic presence. Our local search ranking jumped to #1 within 30 days, and our foot traffic is up 45% year-on-year. He is incredibly direct, reliable, and knows exactly how local shoppers think.",
+      clientName: "Dave Hanbury",
+      businessName: "Hanbury Auto's",
+      location: "Hanbury, Staffordshire",
+      reviewMessage: "Martin has been fantastic. He completely rebuilt our garage's website, captured our family-run heritage, and sorted our local SEO. We've seen a massive spike in phone calls and bookings since it went live. Direct, reliable, and actually delivers what he promises.",
       rating: 5,
-      category: "Retail",
-      yearTag: "Client Since 2025"
+      category: "Local Services",
+      yearTag: "Client Since 2026"
     },
     {
       id: "t2",
-      clientName: "Dave Miller",
-      businessName: "Apex Plumbing & Gas",
-      location: "St Albans",
-      reviewMessage: "Before connecting with Marketni, we were throwing thousands at generic PPC agencies with zero return. Martin set up a radius-based lead pipeline. Within weeks we had our team fully booked. His systems work instantly.",
+      clientName: "Chris",
+      businessName: "CMB Epsom",
+      location: "Epsom Surrey",
+      reviewMessage: "Excellent experience working with Marketni. Martin modernized our digital presence, got us ranking #1 on Google Maps for Epsom car repairs, and set up an enquiry channel that saves us hours of admin. Honest, professional, and highly recommended.",
       rating: 5,
-      category: "Professional",
-      yearTag: "Client Since 2024"
+      category: "Local Services",
+      yearTag: "Client Since 2026"
     },
     {
       id: "t3",
-      clientName: "Dr. Sonal Patel",
-      businessName: "Peak Chiropractic Studio",
-      location: "West London",
-      reviewMessage: "Martin's custom booking pages and automated SMS reply flows doubled our patient enrollment rate. The tech is top-tier but incredibly easy for our customers. He didn't just give us advice; he built the actual system.",
+      clientName: "Richard",
+      businessName: "ElectricRich",
+      location: "Swadlincote, Derbyshire",
+      reviewMessage: "Martin Walker knows exactly how to position a local trade business. He defined our USP, built a fast, fully responsive website, and got us ranking for key local search terms in Surrey. Excellent, straight-talking advice.",
       rating: 5,
-      category: "Health/Wellness",
-      yearTag: "Client Since 2025"
+      category: "Local Services",
+      yearTag: "Client Since 2026"
     },
     {
       id: "t4",
-      clientName: "Marcus Vance",
-      businessName: "The Hearthstone Inn",
-      location: "Harrogate",
-      reviewMessage: "Our restaurant seats were empty on mid-week days. Martin launched a localized 'Storytelling Reel' targeting foodies within 5 miles. We broke our Tuesday revenue record in week three. His advice is gold.",
+      clientName: "Mark",
+      businessName: "Teezi Golf",
+      location: "Epsom & Surrey",
+      reviewMessage: "Martin helped launch our startup golf brand. From our brand playbook and direction to our digital platform, everything was built for low-data consumption and real-time capture. His marketing strategy is absolute gold.",
       rating: 5,
-      category: "Food & Leisure",
-      yearTag: "Client Since 2025"
+      category: "Startup Brands",
+      yearTag: "Client Since 2026"
+    },
+    {
+      id: "t5",
+      clientName: "Dr. Sonal Patel",
+      businessName: "Podiatry & Chiropody Clinic",
+      location: "Clinic Platforms",
+      reviewMessage: "Martin's custom booking pages and Go Digital Custom Platform doubled our patient enrollment rate. The tech is top-tier but incredibly easy for our customers. He didn't just give us advice; he built the actual system.",
+      rating: 5,
+      category: "Clinical Platforms",
+      yearTag: "Client Since 2026"
     }
   ];
 
-  const categories = ["All", "Retail", "Professional", "Health/Wellness", "Food & Leisure"];
+  const categories = ["All", "Local Services", "Startup Brands", "Clinical Platforms"];
 
   const filteredTestimonials = selectedCategory === "All"
     ? testimonialsList
@@ -77,7 +87,7 @@ export default function Testimonials() {
         </div>
 
         {/* Dynamic Category Tabs */}
-        <div className="flex flex-wrap gap-2 text-xs font-mono font-bold tracking-widest uppercase">
+        <div className="flex flex-wrap gap-2 text-sm font-mono font-bold tracking-widest uppercase">
           {categories.map((cat) => (
             <button
                key={cat}

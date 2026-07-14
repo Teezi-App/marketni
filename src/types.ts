@@ -14,7 +14,7 @@ export interface TestimonialType {
   location: string;
   reviewMessage: string;
   rating: number;
-  category: "Retail" | "Professional" | "Health/Wellness" | "Food & Leisure";
+  category: "Retail" | "Professional" | "Health/Wellness" | "Food & Leisure" | "Local Services" | "Startup Brands" | "Clinical Platforms";
   yearTag: string;
 }
 

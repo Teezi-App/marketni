@@ -75,7 +75,7 @@ export default function App() {
             <div className="pt-4">
               <button
                 onClick={() => handleScrollToSection("contact")}
-                className="bg-brand-green hover:bg-white text-black font-mono font-black text-xs md:text-sm tracking-wider uppercase px-8 py-4 inline-flex items-center space-x-2 transition duration-300 cursor-pointer rounded-sm shadow-lg shadow-brand-green/10"
+                className="bg-brand-green hover:bg-white text-black font-mono font-black text-sm tracking-wider uppercase px-8 py-4 inline-flex items-center space-x-2 transition duration-300 cursor-pointer rounded-sm shadow-lg shadow-brand-green/10"
               >
                 <span>BOOK A FREE STRATEGY SESSION</span>
                 <ArrowUpRight className="w-4 h-4 text-black shrink-0" />
