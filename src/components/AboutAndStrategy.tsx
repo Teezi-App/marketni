@@ -137,7 +137,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
             </div>
             
             <div className="lg:col-span-6 text-neutral-600 font-light text-base md:text-lg leading-relaxed pt-2">
-              Successful marketing doesn't start with a website. It starts with understanding the business behind it. No guesswork. Just evidence.
+              Business marketing support, doesn't start with a website. It starts with understanding the business behind it. No guesswork. Just evidence.
             </div>
           </div>
 
@@ -158,7 +158,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
                 <h4 className="text-lg font-black tracking-tight text-neutral-950 font-display uppercase">
                   Business Strategy
                 </h4>
-                <p className="text-xs text-neutral-600 leading-relaxed font-light">
+                <p className="text-sm text-neutral-600 leading-relaxed font-light">
                   Uncover opportunities, solve real problems and create a roadmap for growth.
                 </p>
               </div>
@@ -178,7 +178,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
                 <h4 className="text-lg font-black tracking-tight text-neutral-950 font-display uppercase">
                   Brand Positioning
                 </h4>
-                <p className="text-xs text-neutral-600 leading-relaxed font-light">
+                <p className="text-sm text-neutral-600 leading-relaxed font-light">
                   Define who you are, why you're different and why customers should choose you.
                 </p>
               </div>
@@ -198,7 +198,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
                 <h4 className="text-lg font-black tracking-tight text-neutral-950 font-display uppercase">
                   Digital Experiences
                 </h4>
-                <p className="text-xs text-neutral-600 leading-relaxed font-light">
+                <p className="text-sm text-neutral-600 leading-relaxed font-light">
                   Websites and apps designed around people, built for performance and scalability.
                 </p>
               </div>
@@ -218,7 +218,7 @@ export default function AboutAndStrategy({ onScrollToSection }: AboutAndStrategy
                 <h4 className="text-lg font-black tracking-tight text-neutral-950 font-display uppercase">
                   Marketing Growth
                 </h4>
-                <p className="text-xs text-neutral-600 leading-relaxed font-light">
+                <p className="text-sm text-neutral-600 leading-relaxed font-light">
                   Smart strategies that attract the right people, convert better and drive real results.
                 </p>
               </div>

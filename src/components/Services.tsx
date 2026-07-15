@@ -301,14 +301,14 @@ export default function Services() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-white/10 pb-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2 font-mono text-xs text-brand-green font-bold uppercase tracking-widest">
-              <span>[01 // Digital Marketing Projects]</span>
+              <span>[01 // Business Marketing Support]</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight font-display">
               COMMUNITY & <span className="text-neutral-500">CLIENTS</span>
             </h2>
           </div>
           <div className="font-sans font-light text-base md:text-lg text-neutral-400 max-w-md leading-relaxed">
-            I don't create generic off the shelf products. I build custom, high-converting digital products with the latest code that can be scaled into any digital format, including apps.
+            I never use templates. I build custom, high-converting digital products In house using the latest Google developer software, that can be easily scaled into any digital format, including mobile apps. No 3rd party subscriptions
           </div>
         </div>
 

@@ -168,7 +168,7 @@ export default function ContactForm() {
                 ENGAGE THE <span className="text-neutral-900 relative inline-block border-b-4 border-brand-green">PLAYBOOK.</span>
               </h2>
               <p className="text-sm font-sans text-neutral-600 leading-relaxed font-light">
-                Ready to dominate your postcode? Drop me a message. No automated sales pitches! I review every local inquiry personally within 24 hours. Let's make your brand the regional default.
+                Ready to dominate your postcode? Drop Martin a message. No automated sales pitches! I review every local inquiry personally within 24 hours. Let's make your business the regional default and lower your cost.
               </p>
             </div>
 

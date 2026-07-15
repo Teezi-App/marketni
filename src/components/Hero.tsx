@@ -96,7 +96,7 @@ export default function Hero({ onScrollToSection }: HeroProps) {
 
           <div className="space-y-6 max-w-xl">
             <p className="text-base md:text-lg text-neutral-800 font-sans font-light leading-relaxed">
-              I uncover what makes your business different, define why customers should choose you, then build everything around that.
+              Marketni uncovers what makes your business different, define why customers should choose you, then build everything around that.
             </p>
             
             <div className="pt-2">
