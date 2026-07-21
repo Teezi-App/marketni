@@ -109,10 +109,10 @@ export default function Hero({ onScrollToSection }: HeroProps) {
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center pt-4">
             <button
-              onClick={() => onScrollToSection("strategy")}
+              onClick={() => onScrollToSection("contact")}
               className="px-8 py-4 bg-[#6fffe9] text-black font-mono text-sm font-black tracking-widest hover:bg-neutral-950 hover:text-white transition-all duration-200 cursor-pointer text-center uppercase shadow-sm"
             >
-              Get 3 Instant Campaigns &rarr;
+              CALL OR MESSAGE &rarr;
             </button>
             <button
               onClick={() => onScrollToSection("approach")}

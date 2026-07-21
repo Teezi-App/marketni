@@ -95,7 +95,7 @@ export default function WebsiteRedesignFloatingWidget() {
             >
               {/* Highlight Badge */}
               <div className="absolute -top-2.5 -left-2 bg-brand-green text-black text-[9px] font-mono font-black tracking-wider uppercase px-2 py-0.5 rounded-sm shadow-md animate-pulse">
-                FREE REDESIGN
+                FREE HOMEPAGE REDESIGN
               </div>
 
               {/* Icon Indicator */}
@@ -106,13 +106,13 @@ export default function WebsiteRedesignFloatingWidget() {
               {/* Core Text */}
               <div className="space-y-1 pr-6">
                 <h4 className="text-xs font-mono font-black text-brand-green tracking-widest uppercase">
-                  BUSINESS SUPPORT
+                  LOCAL BUSINESS SUPPORT
                 </h4>
                 <p className="text-sm font-bold text-white tracking-tight leading-tight">
-                  Want To See What Your Website Could Become?
+                  See What Your Website Could Become
                 </p>
-                <p className="text-[10px] text-neutral-400 font-mono font-light tracking-wide flex items-center gap-1">
-                  <span>Click to request 48hr concept</span>
+                <p className="text-[12px] text-neutral-400 font-mono font-light tracking-wide flex items-center gap-1">
+                  <span>Receive your concept within 48 hours</span>
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition duration-200" />
                 </p>
               </div>
@@ -170,13 +170,13 @@ export default function WebsiteRedesignFloatingWidget() {
                   <div className="space-y-3">
                     <div className="inline-flex items-center space-x-2 bg-brand-green/10 px-3 py-1 rounded-full text-brand-green font-mono text-xs font-bold tracking-wider uppercase">
                       <Monitor className="w-3.5 h-3.5" />
-                      <span>Complimentary Homepage Revamp</span>
+                      <span>FREE HOMEPAGE CONCEPT</span>
                     </div>
                     <h2 className="text-xl md:text-2xl font-black text-white leading-snug font-display tracking-tight uppercase">
-                      Fantastic! I'll review your details below and send your free homepage redesign within 48hrs
+                      LET’S REIMAGINE YOUR HOMEPAGE
                     </h2>
                     <p className="text-xs text-neutral-400 font-light leading-relaxed">
-                      Please supply accurate details so Martin can thoroughly evaluate your digital layout, search positioning, and business conversion opportunities.
+                      Share your website below and I’ll show you how it could look, communicate and convert more effectively
                     </p>
                   </div>
 
@@ -272,11 +272,11 @@ export default function WebsiteRedesignFloatingWidget() {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="w-4 h-4 animate-spin" />
-                          <span>SENDING TO MARTIN...</span>
+                          <span>SHOWING WHAT’S POSSIBLE...</span>
                         </>
                       ) : (
                         <>
-                          <span>SEND TO MARTIN</span>
+                          <span>SHOW ME WHAT’S POSSIBLE</span>
                           <Send className="w-3.5 h-3.5" />
                         </>
                       )}
